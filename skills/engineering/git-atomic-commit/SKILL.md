@@ -30,22 +30,28 @@ Present all five sections. Never skip a section to save tokens — the user need
 
 ## Plan
 
-Numbered list of proposed commits in dependency order. Wait for a single `approve`, `yes`, or `go` before executing. No other phrasing counts as approval — ambiguity here means rollback risk.
+Numbered list of proposed commits in dependency order. Use the `question` tool to request approval before executing — ambiguity here means rollback risk.
+
+## Approval
+
+Use the `question` tool with two options:
+
+- **Approve — with backup** — back up the working tree with `git stash push -m "backup-before-atomic-commit"`, then `git stash apply` to restore it. Stash remains as a safety net for recovery. Proceed to execution.
+- **Approve — no backup** — skip the stash and proceed straight to execution.
 
 ## Execution
 
-1. **Back up** — `git stash push -m "backup-before-atomic-commit"` (safety net for recovery).
-2. **Restore** — `git stash apply` (keeps the stash).
-3. **Reset** — `git reset HEAD --quiet` (clean staging slate).
-4. **Commit in order** — for each group: `git add` (whole files or `-p` for partials), then `git commit -m "<message>"`.
-   - On any commit failure: report the error and stop. The stash remains for `git stash pop` recovery. Do not continue past a failure.
-5. **Summarise** — Markdown table of executed commits:
+1. **Back up** (only if "Approve — with backup" was chosen) — `git stash push -m "backup-before-atomic-commit"`, then `git stash apply` to restore the working tree.
+2. **Reset** — `git reset HEAD --quiet` (clean staging slate).
+3. **Commit in order** — for each group: `git add` (whole files or `-p` for partials), then `git commit -m "<message>"`.
+   - On any commit failure: report the error and stop. If a stash was created, it remains for `git stash pop` recovery. Do not continue past a failure.
+4. **Summarise** — Markdown table of executed commits:
    ```
    | # | Commit Message | Files |
    |---|----------------|-------|
    | 1 | feat(security): add shared auth types | types.ts |
    ```
-6. **Leave the stash** in place after success — the user decides when to drop it.
+5. **Leave the stash** in place after success (if one was created) — the user decides when to drop it.
 
 ## Constraints
 
