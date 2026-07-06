@@ -12,7 +12,8 @@ Analyse uncommitted changes, propose atomic Conventional Commits, and execute on
 
 - **Atomic & granular** — split into the smallest logical units. Separate new types, helpers, refactors, dependency updates, and deletions. Never bundle unrelated changes.
 - **Conventional Commits** — `<type>(<scope>): <description>`.
-  - **Scope** — top-level dir under `packages/<scope>` or `apps/<scope>`. Omit when the project uses only one scope (single-package repo, or a flat layout) or for generic/global changes.
+  - **Scope** — must refer to a real path in the repo. Derive from the top-level dir under for example `packages/<scope>` or `apps/<scope>`. Omit when the project uses only one scope (single-package repo, or a flat layout) or for generic/global changes.
+  - **Never invent a scope.** If no real dir matches and the change isn't a recognized special case, drop the scope (e.g. `chore: bump pnpm to 9`).
   - **Description** — imperative, present tense, lowercase, no trailing period.
   - **Breaking** — `!` after type plus `BREAKING CHANGE:` footer.
 
@@ -21,11 +22,12 @@ Analyse uncommitted changes, propose atomic Conventional Commits, and execute on
 Map the diff before proposing. The output shape is mandatory — fill every section.
 
 1. Run `git status` and the diff. If the working tree is clean, reply exactly: `No uncommitted changes detected.` and stop.
-2. **Group** by atomic function. Format:
+2. **Validate scopes** — list the actual top-level dirs with like (`ls packages apps 2>/dev/null`).
+3. **Group** by atomic function. Format:
    - `Group N: <type>(<scope>): <description> → [file1, file2, ...]`
-3. **Overlaps** — files that span groups, staged via partial `git add -p` or split paths.
-4. **Dependencies** — strict ordering between groups (types before importers, deletions last).
-5. **Ambiguities** — changes that need user clarification before they can be grouped.
+4. **Overlaps** — files that span groups, staged via partial `git add -p` or split paths.
+5. **Dependencies** — strict ordering between groups (types before importers, deletions last).
+6. **Ambiguities** — changes that need user clarification before they can be grouped.
 
 Present all five sections. Never skip a section to save tokens — the user needs every one to approve safely.
 
@@ -56,5 +58,5 @@ Use the `question` tool with two options:
 
 ## Constraints
 
-- Allowed commands: `git stash`, `git reset`, `git add`, `git commit`, `git status`, `git diff`. Nothing else.
-- Lockfile changes (`pnpm-lock.yaml`, etc.) ride with the commit that introduces the dependency, or stand alone as a final `chore` commit.
+- Allowed commands: `git stash`, `git reset`, `git add`, `git commit`, `git status`, `git diff`, `ls`. Nothing else.
+- Lockfile changes (`pnpm-lock.yaml`, etc.) ride with the commit that introduces the dependency, or stand alone as a final `chore: update lockfile` commit when they cross package boundaries.
