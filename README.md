@@ -28,6 +28,7 @@ Skills for code work — development, debugging, triage, and architecture.
 **User-invoked**
 
 - **[skill-router](skills/engineering/skill-router/SKILL.md)** — Ask which skill or flow fits your situation. A router over the user-invoked skills in this repo.
+- **[prompt-optimizer](skills/engineering/prompt-optimizer/SKILL.md)** — Distill a prompt or instruction file into a predictable instruction hierarchy.
 - **[grill-with-docs](skills/engineering/grill-with-docs/SKILL.md)** — Grilling session that challenges your plan against the existing domain model, sharpens terminology, and updates `CONTEXT.md` and ADRs inline.
 - **[triage](skills/engineering/triage/SKILL.md)** — Triage issues through a state machine driven by triage roles.
 - **[improve-codebase-architecture](skills/engineering/improve-codebase-architecture/SKILL.md)** — Find deepening opportunities in a codebase, informed by the domain language in `CONTEXT.md` and the decisions in `docs/adr/`.
