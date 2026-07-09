@@ -1,14 +1,14 @@
 ---
 name: skill-router
-description: Ask which skill or flow fits your situation. A router over the user-invoked skills in this repo.
+description: Ask which skill or flow fits your situation. A router over the skills in this repo.
 disable-model-invocation: true
 ---
 
-# Aks Skill Router
+# Ask Skill Router
 
 You don't remember every skill, so ask.
 
-A **flow** is a path through the skills. Most paths run along one **main flow**, and two **on-ramps** merge onto it. Everything else is standalone.
+A **flow** is a path through the skills. Most paths run along one **main flow**, and a few **on-ramps** merge onto it. Everything else is standalone.
 
 ## The main flow: idea → ship
 
@@ -20,28 +20,30 @@ The route most work travels. You have an idea and want it built.
    - **`/prototype`** to answer the question with throwaway code,
    - **`/handoff`** back what you learned, and reference it from the original idea thread.
 3. **Branch — is this a multi-session build?**
-   - **Yes** → **`/to-prd`** (turn the thread into a PRD) → **`/to-issues`** (split the PRD into independently-grabbable issues). Because the issues are independent, **clear context between each one**: start a fresh session per issue and kick off **`/implement`** by passing it the PRD and the single issue to work on.
-   - **No** → **`/implement`** right here, in the same context window.
+   - **Too big for one session** → **`/wayfinder`** to chart a route through the fog first. The map produces decisions (and tickets) on the tracker; someone (you or an agent) then builds them.
+   - **Multi-ticket but fits in one session** → **`/to-spec`** (turn the thread into a spec) → **`/to-tickets`** (split the spec into independently-grabbable tickets). Because the tickets are independent, **clear context between each one**: start a fresh session per ticket and kick off **`/implement`** by passing it the spec and the single ticket to work on.
+   - **Single-ticket** → **`/implement`** right here, in the same context window.
 
 ### Context hygiene
 
-Keep steps 1–3 in **one unbroken context window** — don't compact or clear until after `/to-issues` — so the grilling, PRD, and issues all build on the same thinking. Each `/implement` then starts fresh, working from the issue.
+Keep steps 1–3 in **one unbroken context window** — don't compact or clear until after `/to-tickets` — so the grilling, spec, and tickets all build on the same thinking. Each `/implement` then starts fresh, working from the ticket.
 
-The limit on this is the **[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)**: the window (~120k tokens on state-of-the-art models) within which the model still reasons sharply. If a session approaches it before `/to-issues`, don't push on degraded — `/handoff` and continue in a fresh thread.
+The limit on this is the **[smart zone](https://www.aihero.dev/ai-coding-dictionary/smart-zone)**: the window (~120k tokens on state-of-the-art models) within which the model still reasons sharply. If a session approaches it before `/to-tickets`, don't push on degraded — `/handoff` and continue in a fresh thread.
 
 ## On-ramps
 
 A starting situation that generates work, then merges onto the main flow.
 
-- **Bugs and requests piling up** → **`/triage`**. It moves issues through triage roles and produces agent-ready issues, which **`/implement`** later picks up.
+- **Bugs and requests piling up** → **`/triage`**. It moves issues and external PRs through triage roles and produces agent-ready briefs, which **`/implement`** later picks up.
 
-  Triage is only for issues **you didn't create** — bug reports, incoming feature requests, anything that arrives raw. Issues that `/to-issues` produced are already agent-ready, so **don't triage them**.
+  Triage is only for requests **you didn't create** — bug reports, incoming feature requests, external PRs. Tickets that `/to-tickets` produced are already agent-ready, so **don't triage them**.
 
 ## Codebase health
 
 Not feature work — upkeep.
 
 - **`/improve-codebase-architecture`** — run whenever you have a spare moment to keep the codebase good for agents to operate in. It surfaces deepening opportunities; picking one _generates an idea_ you can take into the main flow at `/grill-with-docs`.
+- **`/code-review`** — review a diff for correctness, design, and the Fowler "Bad Smells in Code" baseline. Use it as the review stage of `/implement`.
 
 ## Crossing sessions
 
@@ -53,9 +55,14 @@ Not feature work — upkeep.
 Off the main flow entirely.
 
 - **`/grill-me`** — the same relentless interview as `/grill-with-docs`, but for when you have **no codebase**. Stateless: it saves nothing locally, builds no `CONTEXT.md`. Reach for it to sharpen any plan or design that doesn't live in a repo.
+- **`/wayfinder`** — chart a route through a foggy problem when the build is too big for one session. Produces a map of decisions, not deliverables, on the repo's issue tracker.
 - **`/teach`** — learn a concept over multiple sessions, using the current directory as a stateful workspace.
 - **`/writing-great-skills`** — reference for writing and editing skills well.
 
 ## Precondition
 
 **`/project-agent-setup`** — run before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.
+
+## Maintenance
+
+When a skill is added, renamed, or removed, or any flow above changes, re-check the routes in this router against the current skill set.
