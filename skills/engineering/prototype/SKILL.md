@@ -1,7 +1,6 @@
 ---
 name: prototype
-description: Build a throwaway prototype to flesh out a design — a runnable terminal app for state/business-logic questions, or several radically different UI variations toggleable from one route.
-disable-model-invocation: true
+description: Prototype a design question with throwaway code — a runnable terminal app for state/business-logic questions, or several radically different UI variations toggleable from one route. Use when a design question needs a runnable answer the conversation can't settle.
 ---
 
 # Prototype
