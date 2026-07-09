@@ -1,6 +1,6 @@
 ---
 name: project-agent-setup
-description: Scaffold per-repo agent config (GitHub or local-markdown issue tracker, triage labels, domain-doc layout) that the engineering skills (`to-issues`, `to-prd`, `triage`, `diagnosing-bugs`, `tdd`, `improve-codebase-architecture`) consume. Writes an `## Agent skills` block to `AGENTS.md` and seeds `docs/agents/`. Run once per repo before first use of those skills, or if they appear to be missing config about the issue tracker, triage labels, or domain docs.
+description: Scaffold per-repo agent config (GitHub or local-markdown issue tracker, triage labels, domain-doc layout) that the engineering skills (`to-tickets`, `to-spec`, `wayfinder`, `triage`, `diagnosing-bugs`, `tdd`, `improve-codebase-architecture`) consume. Writes an `## Agent skills` block to `AGENTS.md` and seeds `docs/agents/`. Run once per repo before first use of those skills, or if they appear to be missing config about the issue tracker, triage labels, or domain docs.
 disable-model-invocation: true
 ---
 
@@ -35,7 +35,7 @@ Assume the user does not know what these terms mean. Each section starts with a 
 
 **Section A — Issue tracker.**
 
-> Explainer: The "issue tracker" is where issues live for this repo. Skills like `to-issues`, `triage`, `to-prd` read from and write to it. Pick the place you actually track work for this repo.
+> Explainer: The "issue tracker" is where issues live for this repo. Skills like `to-tickets`, `triage`, `to-spec`, `wayfinder` read from and write to it. Pick the place you actually track work for this repo.
 
 Default posture: these skills were designed for GitHub. If a `git remote` points at GitHub, propose that. Otherwise (or if the user prefers), offer:
 
