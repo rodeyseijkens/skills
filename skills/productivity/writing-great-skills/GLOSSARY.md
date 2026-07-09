@@ -179,3 +179,19 @@ An instruction that changes nothing because the model already does it by default
 A leading word is a *technique*; No-Op is a *verdict* on a line — and they cross. A leading word too weak to beat the default is a no-op (_be thorough_ when the agent is already thorough-ish), and the fix is a stronger word that passes the verdict (_relentless_), not a different technique. So the No-Op test — does it change behaviour versus the default? — is also how you grade whether a leading word is earning its repetitions. This is model-relative, not reader-relative: two people disagreeing over whether a line is a no-op disagree about the default, and settle it by running the skill, not by debate.
 
 _Avoid_: redundant instruction, restating the obvious, belaboring
+
+### Negation
+
+Steering by prohibition — naming what *not* to do, on the assumption that "off" is neutral. It is not. The forbidden behaviour, once named, is dragged into context and becomes *more* available, not less: the classic case is _don't think of an elephant_, which puts the elephant in the room the moment it is read. Language you think of as off is still on, and a prohibition is one of the loudest ways to say a thing.
+
+The cure is to prompt the **positive**: state what the agent *should* do, in the same place you'd have written the prohibition, so the desired behaviour is the one in context. Where negation is genuinely necessary — a true safety boundary, not a taste call — keep it as a backstop, but lead with the positive; the prohibition then reinforces rather than introduces.
+
+_Avoid_: prohibition, "don't do X", negative framing, "avoid"
+
+### Negative Space
+
+The steering done by what a skill leaves *out*. Every question a skill declines to answer, every branch it declines to name, every decision it declines to make is not a neutral void — it is a delegation to the agent's priors, and the agent's priors will fill the silence with a default. The skill didn't say anything about error handling, so the agent will handle errors the way it handles errors by default. The skill didn't say anything about logging, so the agent will log the way it logs by default. The skill didn't say anything about the case where the input is null, so the agent will treat null the way it treats null by default.
+
+A deliberate **branch** — "when X, do Y; otherwise, do Z" — is a positive choice about a silence. An accidental silence is the skill's author not having noticed the question. The cure is to read a draft for its silences: for every axis the skill could speak to, either fill it (with a positive instruction) or leave it open as a real branch the skill means to allow. The trap is treating "I didn't write anything about X" as the same as "X is fine however the agent does it" — the latter is a deliberate branch, the former is an accident waiting to be discovered by the first user whose default differs from yours.
+
+_Avoid_: omission, gap, what we left out
