@@ -45,7 +45,7 @@ Use the `question` tool with two options:
 ## Execution
 
 1. **Back up** (only if "Approve — with backup" was chosen) — `git stash push -m "backup-before-atomic-commit"`, then `git stash apply` to restore the working tree.
-2. **Reset** — `git reset HEAD --quiet` (clean staging slate).
+2. **Unstage all** — `git restore --staged .` (clean staging slate).
 3. **Commit in order** — for each group: `git add` (whole files or `-p` for partials), then `git commit -m "<message>"`.
    - On any commit failure: report the error and stop. If a stash was created, it remains for `git stash pop` recovery. Do not continue past a failure.
 4. **Summarise** — Markdown table of executed commits:
@@ -58,5 +58,5 @@ Use the `question` tool with two options:
 
 ## Constraints
 
-- Allowed commands: `git stash`, `git reset`, `git add`, `git commit`, `git status`, `git diff`, `ls`. Nothing else.
+- Allowed commands: `git stash`, `git restore`, `git add`, `git commit`, `git status`, `git diff`, `ls`. Nothing else.
 - Lockfile changes (`pnpm-lock.yaml`, etc.) ride with the commit that introduces the dependency, or stand alone as a final `chore: update lockfile` commit when they cross package boundaries.
