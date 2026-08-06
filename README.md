@@ -38,6 +38,8 @@ Skills for code work — development, debugging, triage, and architecture.
 - **[wayfinder](skills/engineering/wayfinder/SKILL.md)** — Wayfind a huge chunk of work — chart a route through a foggy problem when the build is too big for one session. Produces a map of decisions, not deliverables, on the repo's issue tracker.
 - **[implement](skills/engineering/implement/SKILL.md)** — Implement a piece of work based on a spec or set of tickets, using `/tdd` at pre-agreed seams, with `/code-review` as the review stage.
 - **[resolving-merge-conflicts](skills/engineering/resolving-merge-conflicts/SKILL.md)** — Resolve an in-progress git merge/rebase conflict by understanding both intents and running the project's automated checks.
+- **[git-atomic-commit](skills/engineering/git-atomic-commit/SKILL.md)** — Analyze unpushed git changes, propose granular Conventional Commits, and execute atomic commits.
+- **[review-comment-triage](skills/engineering/review-comment-triage/SKILL.md)** — Triage unresolved PR review comments — validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings.
 
 **Model-invoked**
 
@@ -48,7 +50,7 @@ Skills for code work — development, debugging, triage, and architecture.
 - **[codebase-design](skills/engineering/codebase-design/SKILL.md)** — Shared vocabulary for designing deep modules: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface.
 - **[code-review](skills/engineering/code-review/SKILL.md)** — Review a diff for correctness, design, and the Fowler "Bad Smells in Code" baseline.
 - **[research](skills/engineering/research/SKILL.md)** — Spin up a background agent to investigate a question against primary sources, leaving a single cited Markdown note.
-- **[git-atomic-commit](skills/engineering/git-atomic-commit/SKILL.md)** — Analyze unpushed git changes, propose granular Conventional Commits, and execute atomic commits.
+- **[wizard](skills/engineering/wizard/SKILL.md)** — Generate an interactive bash wizard that walks a human through steps only they can perform. Use when provisioning infrastructure, setting up credentials or CI secrets, walking an unfamiliar third-party dashboard, or running a one-off migration or cutover.
 
 ### Productivity
 
