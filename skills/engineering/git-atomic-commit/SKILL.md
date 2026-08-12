@@ -15,7 +15,7 @@ Analyse uncommitted changes, propose atomic Conventional Commits, and execute on
   - **Scope** — must refer to a real path in the repo. Derive from the top-level dir under for example `packages/<scope>` or `apps/<scope>`. Omit when the project uses only one scope (single-package repo, or a flat layout) or for generic/global changes.
   - **Never invent a scope.** If no real dir matches and the change isn't a recognized special case, drop the scope (e.g. `chore: bump pnpm to 9`).
   - **Description** — imperative, present tense, lowercase, no trailing period.
-  - **Breaking** — `!` after type plus `BREAKING CHANGE:` footer.
+  - **Breaking** — mark breaking changes per Conventional Commits and add a `BREAKING CHANGE:` footer.
 
 ## Analysis
 
