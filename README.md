@@ -62,11 +62,11 @@ General workflow tools, not code-specific.
 - **[html-report](skills/productivity/html-report/SKILL.md)** — Render a plan as a single self-contained HTML report (Tailwind + Mermaid from CDNs, no build step).
 - **[handoff](skills/productivity/handoff/SKILL.md)** — Compact the current conversation into a handoff document for another agent to pick up.
 - **[teach](skills/productivity/teach/SKILL.md)** — Teach the user a new skill or concept over multiple sessions, using the current directory as a stateful teaching workspace.
-- **[writing-great-skills](skills/productivity/writing-great-skills/SKILL.md)** — Reference for writing and editing skills well — the vocabulary and principles that make a skill predictable.
 
 **Model-invoked**
 
 - **[grilling](skills/productivity/grilling/SKILL.md)** — Grill the user relentlessly about a plan or design. The shared interview primitive behind `grill-me` and `grill-with-docs`.
+- **[writing-for-agents](skills/productivity/writing-for-agents/SKILL.md)** — Writing documents for agents: skills, AGENTS.md, and any doc an agent reaches by a pointer.
 
 ## Layout
 
