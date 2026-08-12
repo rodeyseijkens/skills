@@ -38,21 +38,46 @@ One research-only subagent per PR. Each agent receives the full text of its PR's
 - **Evidence** — file:line references, snippets, commit hashes.
 - **Drafted reply** — in the reply style below.
 
-Research and drafting belong to the subagent; editing belongs to the coordinator. Done when every comment has a verdict, evidence, and a draft.
+Also flag **overlaps** (findings sharing a root cause or fix — they validate, reply, and fix as one item) and **overstatements** in a finding's own wording (correct them in the draft). Research and drafting belong to the subagent; editing belongs to the coordinator. Done when every comment has a verdict, evidence, a draft, and its overlaps/overstatements are flagged.
 
-### 4. Gate A — post replies
+### 4. Validate with the user, one finding at a time
 
-Present the verdict table and the drafts. On approval, post each draft as a thread reply, then resolve the threads whose verdict is ALREADY-ADDRESSED or NO-LONGER-APPLIES. Recipes in [GH-RECIPES.md](GH-RECIPES.md).
+Walk the findings one at a time, grouping overlapping findings into one item. For each, present the finding in this exact shape — Claim / Evidence / Example / Judgment — so the user can validate it themselves:
 
-### 5. Gate B — approve fixes
+```text
+**Item <n> of <N> — <finding name>** *(<author>, <standalone|grouped>)*
 
-With any APPLIES verdicts, present a fix summary — one line per finding: finding → file(s) → planned change. The user approves (all or per finding) or declines. Decline ends the run.
+**Claim:** <what the finding says, verbatim enough to recognize>.
 
-### 6. Fix
+**Evidence (verified):**
+- <file:line>: <what the code does> — <why it matters>.
+- <corroborating or contradicting references, always file:line>.
 
-Per [FIXING.md](FIXING.md): clean tree, one subagent per approved finding, verify, one atomic commit per finding.
+**Example:**
+# before
+<input that hits the bug>
+# after / or: <what the code does today, leading to the failure>
 
-### 7. Gate C — reference commits
+**Judgment:** <Valid | Not valid | Overstated — ...>. <one line on severity/risk>.
+```
+
+Bullets in Evidence carry the code references; the Example is concrete (a command, an input, a before/after) rather than abstract. End each item with a per-item verdict question: valid (fix) or skip. When a fix has alternatives, offer them and record the user's chosen approach — it may diverge from the finding's own suggestion, and it flows into both the drafted reply ("Will <plan>") and the fix. **No code changes during this phase.**
+
+Done when every finding has a user verdict and, for APPLIES, a chosen fix approach.
+
+### 5. Gate A — post replies
+
+Present the reply drafts with the chosen fix approaches baked in. On approval, post each draft as a thread reply, then resolve the threads whose verdict is ALREADY-ADDRESSED or NO-LONGER-APPLIES. Recipes in [GH-RECIPES.md](GH-RECIPES.md).
+
+### 6. Gate B — approve fixes
+
+With any APPLIES verdicts, present a fix summary — one line per finding: finding → file(s) → planned change (the approach chosen in step 4). The user approves (all or per finding) or declines. Decline ends the run.
+
+### 7. Fix
+
+Per [FIXING.md](FIXING.md): clean tree, one subagent per approved finding dispatched sequentially, verify and commit after each, one atomic commit per finding.
+
+### 8. Gate C — reference commits
 
 Commit references resolve on GitHub only once pushed. Ask the user to push; on confirmation, post a reply on each fixed thread carrying the full commit URL, then resolve the thread.
 

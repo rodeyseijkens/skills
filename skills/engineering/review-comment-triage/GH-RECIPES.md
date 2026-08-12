@@ -36,6 +36,12 @@ gh api graphql -F owner=<owner> -F name=<repo> -F number=<pr> -F query=@threads.
 
 Filter to `isResolved == false`; the thread's subject is `comments.nodes[0]`.
 
+## Shell gotchas
+
+- Count a thread's comments as `.comments.nodes | length` — `.comments | length` counts the connection object's keys, not its nodes.
+- When piping a captured response into `jq`, use `printf '%s' "$resp"`, never `echo "$resp"` — zsh's `echo` expands `\n` sequences inside the JSON and corrupts it.
+- After posting replies, re-fetch the threads and confirm each got exactly one reply from you — a retried POST can double-post (delete the duplicate).
+
 ## Post a thread reply
 
 ```sh
@@ -63,6 +69,12 @@ gh api graphql -F threadId=<thread-node-id> -F query='
       thread { isResolved }
     }
   }'
+```
+
+## Delete a comment
+
+```sh
+gh api repos/<owner>/<repo>/pulls/comments/<comment-databaseId> -X DELETE
 ```
 
 ## Rewrite SHAs after a rebase
