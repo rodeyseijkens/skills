@@ -42,7 +42,7 @@ Also flag **overlaps** (findings sharing a root cause or fix — they validate, 
 
 ### 4. Validate with the user, one finding at a time
 
-Walk the findings one at a time, grouping overlapping findings into one item. For each, present the finding in this exact shape — Claim / Evidence / Example / Judgment — so the user can validate it themselves:
+Present exactly one item per message — never a batch. For each, show the finding in this exact shape — Claim / Evidence / Example / Judgment — so the user can validate it themselves, end with the verdict question, then **stop and wait for the user's answer before presenting the next item**. Do not pre-list all items up front; the user only ever sees one finding, one verdict question, at a time. Group overlapping findings into one item as the sequence proceeds.
 
 ```text
 **Item <n> of <N> — <finding name>** *(<author>, <standalone|grouped>)*
