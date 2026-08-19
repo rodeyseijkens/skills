@@ -68,13 +68,24 @@ General workflow tools, not code-specific.
 - **[grilling](skills/productivity/grilling/SKILL.md)** — Grill the user relentlessly about a plan or design. The shared interview primitive behind `grill-me` and `grill-with-docs`.
 - **[writing-for-agents](skills/productivity/writing-for-agents/SKILL.md)** — Writing documents for agents: skills, AGENTS.md, and any doc an agent reaches by a pointer.
 
+### Misc
+
+Communication and style skills.
+
+**Model-invoked**
+
+- **[unslop](skills/misc/unslop/SKILL.md)** — Cut AI tells from any writing. Must always apply.
+- **[caveman](skills/misc/caveman/SKILL.md)** — Ultra-compressed communication mode. Speaks like a smart caveman while keeping full technical accuracy.
+
 ## Layout
 
-Skills live under `skills/{engineering,productivity}/<name>/SKILL.md`.
+Skills live under `skills/{engineering,productivity,misc}/<name>/SKILL.md`.
 
 ## License
 
 MIT — see [LICENSE](LICENSE).
 
 Original work Copyright (c) Matt Pocock.
+Original work Copyright (c) Lauren Tan.
+Original work Copyright (c) Julius Brussee.
 Modifications Copyright (c) Rodey Seijkens.
