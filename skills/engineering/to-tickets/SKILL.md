@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Break a plan, spec, or conversation into a set of **tickets** — tracer-bullet vertical slices, each declaring its **blocking edges** — and publish them to the project issue tracker.
 
-A ticket is "grabbable" the moment its blockers are done; the tracker's native blocking edges show the frontier visually. That one artifact reads two ways depending on the tracker `/setup-matt-pocock-skills` configured: a **local file** (`tickets.md`) writes the edges as text and you work it top-to-bottom by hand; a **real tracker** writes them as native blocking links, so any ticket whose blockers are done is on the frontier and several agents can run at once.
+A ticket is "grabbable" the moment its blockers are done; the tracker's native blocking edges show the frontier visually. That one artifact reads two ways depending on the tracker configured: a **local file** (`tickets.md`) writes the edges as text and you work it top-to-bottom by hand; a **real tracker** writes them as native blocking links, so any ticket whose blockers are done is on the frontier and several agents can run at once.
 
 The issue tracker and triage label vocabulary should have been provided to you — run `/project-agent-setup` if not.
 
