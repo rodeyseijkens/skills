@@ -61,13 +61,13 @@ Present exactly one item per message — never a batch. For each, show the findi
 **Judgment:** <Valid | Not valid | Overstated — ...>. <one line on severity/risk>.
 ```
 
-Bullets in Evidence carry the code references; the Example is concrete (a command, an input, a before/after) rather than abstract. End each item with a per-item verdict question: valid (fix) or skip. When a fix has alternatives, offer them and record the user's chosen approach — it may diverge from the finding's own suggestion, and it flows into both the drafted reply ("Will <plan>") and the fix. **No code changes during this phase.**
+Bullets in Evidence carry the code references; the Example is concrete (a command, an input, a before/after) rather than abstract. End each item with a per-item verdict question: fix, skip (record a one-line reason), or not valid. When a fix has alternatives, offer them and record the user's chosen approach — it may diverge from the finding's own suggestion, and it flows into both the drafted reply ("Will <plan>") and the fix. A skip flows into the drafted reply as "Wont fix — <reason>". **No code changes during this phase.**
 
-Done when every finding has a user verdict and, for APPLIES, a chosen fix approach.
+Done when every finding has a user verdict and, for APPLIES, a chosen fix approach or skip reason.
 
 ### 5. Gate A — post replies
 
-Present the reply drafts with the chosen fix approaches baked in. On approval, post each draft as a thread reply, then resolve the threads whose verdict is ALREADY-ADDRESSED or NO-LONGER-APPLIES. Recipes in [GH-RECIPES.md](GH-RECIPES.md).
+Present the reply drafts with the chosen fix approaches or skip reasons baked in. On approval, post each draft as a thread reply, then resolve the threads whose verdict is ALREADY-ADDRESSED or NO-LONGER-APPLIES. Recipes in [GH-RECIPES.md](GH-RECIPES.md).
 
 ### 6. Gate B — approve fixes
 
@@ -83,11 +83,12 @@ Commit references resolve on GitHub only once pushed. Ask the user to push; on c
 
 ## Reply style
 
-Concise, plain text, one of three shapes:
+Concise, plain text, one of four shapes:
 
 - `Already addressed on this branch (<validation-PR URL>) — <evidence>.`
 - `No longer applies on this branch (<validation-PR URL>) — <evidence>.`
 - `Valid — <details>. Will <fix plan>.`
+- `Wont fix — <reason>.`
 
 Post-fix reference: `Fixed in <full commit URL> — <one-line summary>.`
 
