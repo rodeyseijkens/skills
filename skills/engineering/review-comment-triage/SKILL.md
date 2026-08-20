@@ -22,7 +22,7 @@ Done when every PR's unresolved threads are listed and filtered.
 
 Every finding is validated against one branch, named explicitly before validating:
 
-- **Stacked PRs** — validate against the **stack tip**. Prefer `gh stack` when installed; if it is missing, prompt the user to install it (running `gh stack` triggers the install prompt), and fall back to walking upward if they decline: `gh pr list --base <head-branch> --state open --json number,headRefName`, repeated until no open PR targets the current head. The topmost PR is the tip.
+- **Stacked PRs** — validate against the **stack tip**. Prefer `gh stack` when installed; if it is missing, prompt the user to install it (running `gh extension install github/gh-stack` triggers the install prompt), and fall back to walking upward if they decline: `gh pr list --base <head-branch> --state open --json number,headRefName`, repeated until no open PR targets the current head. The topmost PR is the tip.
 - **Solo PR** — validate against the PR's own branch.
 
 The working tree must be on the validation branch. Done when the branch is named and the working tree is on it.
