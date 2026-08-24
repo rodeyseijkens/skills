@@ -12,8 +12,12 @@ Analyse uncommitted changes, propose atomic Conventional Commits, and execute on
 
 - **Atomic & granular** — split into the smallest logical units. Separate new types, helpers, refactors, dependency updates, and deletions. Never bundle unrelated changes.
 - **Conventional Commits** — `<type>(<scope>): <description>`.
-  - **Scope** — must refer to a real path in the repo. Derive from the top-level dir under for example `packages/<scope>` or `apps/<scope>`. Omit when the project uses only one scope (single-package repo, or a flat layout) or for generic/global changes.
-  - **Never invent a scope.** If no real dir matches and the change isn't a recognized special case, drop the scope (e.g. `chore: bump pnpm to 9`).
+  - **Scope** — only used for multi-package monorepos. Derive from top-level sub-package dirs (e.g. `packages/<scope>`, `apps/<scope>`). Drop scope entirely for single-package and flat-layout repos.
+  - **Scope detection** — run this algorithm before grouping:
+     1. Check if the repo is a monorepo: `test -f pnpm-workspace.yaml -o -f lerna.json -o -f nx.json` or grep `package.json` for `"workspaces"` — exits 0 if monorepo.
+     2. Check for actual sub-packages: `ls -d packages/*/package.json apps/*/package.json libs/*/package.json modules/*/package.json 2>/dev/null | head -2 | wc -l | xargs test 2 -le` — exits 0 if ≥2 sub-packages.
+     3. Only use scopes if BOTH a monorepo marker AND ≥2 sub-packages exist. Otherwise omit scopes.
+  - **Never invent a scope.** If no real dir matches, drop the scope (e.g. `chore: bump pnpm to 9`).
   - **Description** — imperative, present tense, lowercase, no trailing period.
   - **Breaking** — mark breaking changes per Conventional Commits and add a `BREAKING CHANGE:` footer.
 
@@ -22,7 +26,7 @@ Analyse uncommitted changes, propose atomic Conventional Commits, and execute on
 Map the diff before proposing. The output shape is mandatory — fill every section.
 
 1. Run `git status` and the diff. If the working tree is clean, reply exactly: `No uncommitted changes detected.` and stop.
-2. **Validate scopes** — list the actual top-level dirs with like (`ls packages apps 2>/dev/null`).
+2. **Validate scopes** — run the scope detection algorithm (from Principles) and declare whether scopes are in use. If they are, list the valid scopes and which sub-package dir they map to.
 3. **Group** by atomic function. Format:
    - `Group N: <type>(<scope>): <description> → [file1, file2, ...]`
 4. **Overlaps** — files that span groups, staged via partial `git add -p` or split paths.
@@ -58,5 +62,5 @@ Use the `question` tool with two options:
 
 ## Constraints
 
-- Allowed commands: `git stash`, `git restore`, `git add`, `git commit`, `git status`, `git diff`, `ls`. Nothing else.
+- Allowed commands: `git stash`, `git restore`, `git add`, `git commit`, `git status`, `git diff`, `ls`, `head`, `wc`, `xargs`, `test`, `grep`. Nothing else.
 - Lockfile changes (`pnpm-lock.yaml`, etc.) ride with the commit that introduces the dependency, or stand alone as a final `chore: update lockfile` commit when they cross package boundaries.
