@@ -62,6 +62,7 @@ General workflow tools, not code-specific.
 - **[html-report](skills/productivity/html-report/SKILL.md)** — Render a plan as a single self-contained HTML report (Tailwind + Mermaid from CDNs, no build step).
 - **[handoff](skills/productivity/handoff/SKILL.md)** — Compact the current conversation into a handoff document for another agent to pick up.
 - **[teach](skills/productivity/teach/SKILL.md)** — Teach the user a new skill or concept over multiple sessions, using the current directory as a stateful teaching workspace.
+- **[todo](skills/productivity/todo/SKILL.md)** — Queue an item into the agent's todo list — preempts the running task when urgent enough, otherwise slots it in by priority.
 
 **Model-invoked**
 

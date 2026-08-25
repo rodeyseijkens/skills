@@ -10,6 +10,7 @@ Reachable only when you type them (Claude Code: `disable-model-invocation: true`
 - **[handoff](./handoff/SKILL.md)** — Compact the current conversation into a handoff document so another agent can continue the work.
 - **[html-report](./html-report/SKILL.md)** — Turn a plan into a visual HTML report.
 - **[teach](./teach/SKILL.md)** — Teach the user a new skill or concept over multiple sessions, using the current directory as a stateful teaching workspace.
+- **[todo](./todo/SKILL.md)** — Queue an item into the agent's todo list; it preempts the running task when urgent enough, otherwise slots it in by priority.
 - **[to-questionnaire](./to-questionnaire/SKILL.md)** — Turn a decision you can't answer alone into a Markdown questionnaire for the one person who can — filled in async, or together over a meeting.
 - **[wait-what](./wait-what/SKILL.md)** — Fire this the moment a message doesn't land. The agent re-pitches it with the context you're missing, in plain English, using your `CONTEXT.md` vocabulary.
 
