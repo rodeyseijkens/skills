@@ -1,16 +1,16 @@
 ---
 name: to-tickets
-description: Break a plan, spec, or PRD into independently-grabbable tickets on the project issue tracker using tracer-bullet vertical slices. Handles ordinary work and wide refactors.
+description: Break a plan, spec, or conversation into independently-grabbable tickets on the project issue tracker using tracer-bullet vertical slices. Handles ordinary work and wide refactors.
 disable-model-invocation: true
 ---
 
 # To Tickets
 
-Break a plan, spec, or conversation into a set of **tickets** — tracer-bullet vertical slices, each declaring its **blocking edges** — and publish them to the project issue tracker.
+Break a plan, spec, or conversation into a set of **tickets**: tracer-bullet vertical slices, each declaring its **blocking edges**, and publish them to the project issue tracker.
 
 A ticket is "grabbable" the moment its blockers are done; the tracker's native blocking edges show the frontier visually. That one artifact reads two ways depending on the tracker configured: a **local file** (`tickets.md`) writes the edges as text and you work it top-to-bottom by hand; a **real tracker** writes them as native blocking links, so any ticket whose blockers are done is on the frontier and several agents can run at once.
 
-The issue tracker and triage label vocabulary should have been provided to you — run `/project-agent-setup` if not.
+The issue tracker and triage label vocabulary should have been provided to you. If not, tell the user to run `/project-agent-setup`.
 
 ## Process
 
@@ -26,7 +26,7 @@ Look for opportunities to prefactor the code to make the implementation easier. 
 
 ### 3. Pick the slicing strategy
 
-Most plans slice into **vertical slices** (ordinary tracer bullets). A few don't — they are a **wide refactor**: a single mechanical change whose blast radius fans across the whole codebase, breaking thousands of call sites at once so no vertical slice can land green. If you recognise that shape, switch to the wide-refactor strategy in [Wide refactors](#wide-refactors) below.
+Most plans slice into **vertical slices** (ordinary tracer bullets). A few don't; they are a **wide refactor**: a single mechanical change whose blast radius fans across the whole codebase, breaking thousands of call sites at once so no vertical slice can land green. If you recognise that shape, switch to the wide-refactor strategy in [Wide refactors](#wide-refactors) below.
 
 <vertical-slice-rules>
 
@@ -42,11 +42,11 @@ Most plans slice into **vertical slices** (ordinary tracer bullets). A few don't
 
 ### Wide refactors (mechanical, cross-cutting change)
 
-A wide refactor — e.g. rename a column, swap a function signature, change a type's shape — cannot be sliced by tracer bullet because every slice would break the world at once. Slice it by **expand–contract** instead:
+A wide refactor (e.g. rename a column, swap a function signature, change a type's shape) cannot be sliced by tracer bullet because every slice would break the world at once. Slice it by **expand–contract** instead:
 
 1. **Expand.** Introduce the new form *beside* the old. Both work; the world is consistent.
-2. **Migrate.** Update call sites in batches sized by **blast radius** — a batch is small enough to land green and large enough to be worth a ticket. The batch is the **tracer bullet** here: it must compile, pass tests, and keep the system green.
-3. **Contract.** Remove the old form once every call site is on the new one. CI stays green batch to batch — or, when it can't, only at a final **integrate-and-verify** ticket that does the contract step.
+2. **Migrate.** Update call sites in batches sized by **blast radius**: a batch is small enough to land green and large enough to be worth a ticket. The batch is the **tracer bullet** here: it must compile, pass tests, and keep the system green.
+3. **Contract.** Remove the old form once every call site is on the new one. CI stays green batch to batch, or, when it can't, only at a final **integrate-and-verify** ticket that does the contract step.
 
 If the refactor is so large that even the expand phase can't stay green, plan for a single integrate-and-verify ticket that holds the whole migration behind a feature flag.
 
@@ -85,7 +85,7 @@ A reference to the parent issue on the issue tracker (if the source was an exist
 
 A concise description of this vertical slice. Describe the end-to-end behavior, not layer-by-layer implementation.
 
-Avoid specific file paths or code snippets — they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it here and note briefly that it came from a prototype. Trim to the decision-rich parts — not a working demo, just the important bits.
+Avoid specific file paths or code snippets; they go stale fast. Exception: if a prototype produced a snippet that encodes a decision more precisely than prose can (state machine, reducer, schema, type shape), inline it here and note briefly that it came from a prototype. Trim to the decision-rich parts, not a working demo, just the important bits.
 
 ## Acceptance criteria
 
