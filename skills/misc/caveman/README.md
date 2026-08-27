@@ -44,5 +44,5 @@ Caveman (ultra):
 
 ## See also
 
-- [`SKILL.md`](./SKILL.md) — full LLM-facing instructions
-- [Original caveman skill](https://github.com/JuliusBrussee/caveman) — upstream source
+- [`SKILL.md`](./SKILL.md): full LLM-facing instructions
+- [Original caveman skill](https://github.com/JuliusBrussee/caveman): upstream source

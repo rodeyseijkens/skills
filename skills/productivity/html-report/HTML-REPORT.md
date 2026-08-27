@@ -1,6 +1,6 @@
 # HTML Report Format
 
-The report is a single self-contained HTML file. Tailwind and Mermaid both come from CDNs. Mermaid handles graph-shaped diagrams reliably; hand-built divs and inline SVG handle the more editorial visuals (timelines, hierarchies, comparisons). Mix the two — don't lean on Mermaid for everything, it'll start to look generic.
+The report is a single self-contained HTML file. Tailwind and Mermaid both come from CDNs. Mermaid handles graph-shaped diagrams reliably; hand-built divs and inline SVG handle the more editorial visuals (timelines, hierarchies, comparisons). Mix the two: don't lean on Mermaid for everything, it'll start to look generic.
 
 ## Scaffold
 
@@ -35,7 +35,7 @@ The report is a single self-contained HTML file. Tailwind and Mermaid both come 
 
 ## Header
 
-Report title, date, and a compact legend for any visual conventions used in the diagrams. No introduction paragraph — straight into the content.
+Report title, date, and a compact legend for any visual conventions used in the diagrams. No introduction paragraph. Straight into the content.
 
 ## Card
 
@@ -43,16 +43,16 @@ The diagrams carry the weight. Prose is sparse and plain.
 
 Each plan item is one `<article>`:
 
-- **Title** — short, names the item
-- **Badge row** — status, category, or priority. Pick colours: emerald for positive/go, amber for caution/explore, slate for neutral/speculative
-- **Diagram** — the centrepiece. See patterns below
-- **Detail** — bullets over paragraphs. ≤6 words per bullet where possible
+- **Title**: short, names the item
+- **Badge row**: status, category, or priority. Pick colours: emerald for positive/go, amber for caution/explore, slate for neutral/speculative
+- **Diagram**: the centrepiece. See patterns below
+- **Detail**: bullets over paragraphs. ≤6 words per bullet where possible
 
 No paragraphs of explanation. If the diagram needs a paragraph to be understood, redraw the diagram.
 
 ## Diagram patterns
 
-Pick the pattern that fits the content. Mix them. Don't make every diagram look the same — variety is part of the point.
+Pick the pattern that fits the content. Mix them. Don't make every diagram look the same. Variety is part of the point.
 
 ### Mermaid graph (the workhorse for dependencies / flow)
 
@@ -92,8 +92,8 @@ Side-by-side cards or columns. Each alternative gets equal visual weight. Use ba
 - Lean editorial, not corporate-dashboard. Generous whitespace. Serif optional for headings (`font-serif` works well with stone/slate).
 - Colour sparingly: one accent (emerald or indigo) plus red for highlights and amber for warnings.
 - Keep diagrams ~320px tall so comparisons sit comfortably side by side without scrolling.
-- Use `text-xs uppercase tracking-wider` for labels inside diagrams — they should read as schematic, not as UI.
-- The only scripts are the Tailwind CDN and the Mermaid ESM import. The report is otherwise static — no app code, no interactivity beyond Mermaid's own rendering.
+- Use `text-xs uppercase tracking-wider` for labels inside diagrams, so they read as schematic, not as UI.
+- The only scripts are the Tailwind CDN and the Mermaid ESM import. The report is otherwise static: no app code, no interactivity beyond Mermaid's own rendering.
 
 ## Top recommendation section
 
