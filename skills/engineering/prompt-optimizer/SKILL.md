@@ -20,10 +20,10 @@ Completion criterion: every source to optimize is known, the output mode is clea
 
 Assign every instruction to exactly one bucket:
 
-- **Root** — needed on every run before the agent can act safely.
-- **Disclosed** — relevant only for a branch, domain, tool, language, workflow, or convention.
-- **Clarify** — conflicts with another instruction or depends on a user preference.
-- **Delete** — duplicate, stale, vague, obvious, or no-op.
+- **Root**: needed on every run before the agent can act safely.
+- **Disclosed**: relevant only for a branch, domain, tool, language, workflow, or convention.
+- **Clarify**: conflicts with another instruction or depends on a user preference.
+- **Delete**: duplicate, stale, vague, obvious, or no-op.
 
 For contradictions that change behaviour, ask the user which version to keep before rewriting.
 

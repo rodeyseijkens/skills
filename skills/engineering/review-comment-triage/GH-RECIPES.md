@@ -1,6 +1,6 @@
 # gh recipes
 
-Exact invocations for review-comment triage. Encode every comment write as `jq -Rs '{body: .}' <file> | gh api ... --input -` — the `-f body=@file` form posts the literal path instead of the file's content.
+Exact invocations for review-comment triage. Encode every comment write as `jq -Rs '{body: .}' <file> | gh api ... --input -`; the `-f body=@file` form posts the literal path instead of the file's content.
 
 Two id systems are in play: REST endpoints take the comment's **databaseId**; the GraphQL mutation takes the thread's **node id**. The query below returns both.
 
@@ -38,9 +38,9 @@ Filter to `isResolved == false`; the thread's subject is `comments.nodes[0]`.
 
 ## Shell gotchas
 
-- Count a thread's comments as `.comments.nodes | length` — `.comments | length` counts the connection object's keys, not its nodes.
-- When piping a captured response into `jq`, use `printf '%s' "$resp"`, never `echo "$resp"` — zsh's `echo` expands `\n` sequences inside the JSON and corrupts it.
-- After posting replies, re-fetch the threads and confirm each got exactly one reply from you — a retried POST can double-post (delete the duplicate).
+- Count a thread's comments as `.comments.nodes | length`; `.comments | length` counts the connection object's keys, not its nodes.
+- When piping a captured response into `jq`, use `printf '%s' "$resp"`, never `echo "$resp"`, because zsh's `echo` expands `\n` sequences inside the JSON and corrupts it.
+- After posting replies, re-fetch the threads and confirm each got exactly one reply from you; a retried POST can double-post (delete the duplicate).
 
 ## Post a thread reply
 

@@ -1,6 +1,6 @@
 ---
 name: review-comment-triage
-description: Triage unresolved PR review comments — validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings.
+description: "Triage unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings."
 disable-model-invocation: true
 ---
 
@@ -14,7 +14,7 @@ Inputs: one or more PR numbers/URLs, optionally a list of comment authors to ski
 
 ### 1. Scope the run
 
-Fetch every unresolved review thread per PR — thread id, first-comment author, body, path, line; recipe in [GH-RECIPES.md](GH-RECIPES.md). Drop threads whose first-comment author is on the skip list. Report the inventory (PR → thread count) before proceeding.
+Fetch every unresolved review thread per PR, recording thread id, first-comment author, body, path, and line; recipe in [GH-RECIPES.md](GH-RECIPES.md). Drop threads whose first-comment author is on the skip list. Report the inventory (PR → thread count) before proceeding.
 
 Done when every PR's unresolved threads are listed and filtered.
 
@@ -22,8 +22,8 @@ Done when every PR's unresolved threads are listed and filtered.
 
 Every finding is validated against one branch, named explicitly before validating:
 
-- **Stacked PRs** — validate against the **stack tip**. Prefer `gh stack` when installed; if it is missing, prompt the user to install it (running `gh extension install github/gh-stack` triggers the install prompt), and fall back to walking upward if they decline: `gh pr list --base <head-branch> --state open --json number,headRefName`, repeated until no open PR targets the current head. The topmost PR is the tip.
-- **Solo PR** — validate against the PR's own branch.
+- **Stacked PRs**: validate against the **stack tip**. Prefer `gh stack` when installed; if it is missing, prompt the user to install it (running `gh extension install github/gh-stack` triggers the install prompt), and fall back to walking upward if they decline: `gh pr list --base <head-branch> --state open --json number,headRefName`, repeated until no open PR targets the current head. The topmost PR is the tip.
+- **Solo PR**: validate against the PR's own branch.
 
 The working tree must be on the validation branch. Done when the branch is named and the working tree is on it.
 
@@ -31,26 +31,26 @@ The working tree must be on the validation branch. Done when the branch is named
 
 One research-only subagent per PR. Each agent receives the full text of its PR's comments and returns, per comment:
 
-- **Verdict** —
-  - **APPLIES** — the issue exists in the current code.
-  - **ALREADY-ADDRESSED** — a later change fixed it; name the commit.
-  - **NO-LONGER-APPLIES** — the code it targets is gone or restructured; say how.
-- **Evidence** — file:line references, snippets, commit hashes.
-- **Drafted reply** — in the reply style below.
+- **Verdict**:
+  - **APPLIES**: the issue exists in the current code.
+  - **ALREADY-ADDRESSED**: a later change fixed it; name the commit.
+  - **NO-LONGER-APPLIES**: the code it targets is gone or restructured; say how.
+- **Evidence**: file:line references, snippets, commit hashes.
+- **Drafted reply**: in the reply style below.
 
-Also flag **overlaps** (findings sharing a root cause or fix — they validate, reply, and fix as one item) and **overstatements** in a finding's own wording (correct them in the draft). Research and drafting belong to the subagent; editing belongs to the coordinator. Done when every comment has a verdict, evidence, a draft, and its overlaps/overstatements are flagged.
+Also flag **overlaps** (findings sharing a root cause or fix; they validate, reply, and fix as one item) and **overstatements** in a finding's own wording (correct them in the draft). Research and drafting belong to the subagent; editing belongs to the coordinator. Done when every comment has a verdict, evidence, a draft, and its overlaps/overstatements are flagged.
 
 ### 4. Validate with the user, one finding at a time
 
-Present exactly one item per message — never a batch. For each, show the finding in this exact shape — Claim / Evidence / Example / Judgment — so the user can validate it themselves, end with the verdict question, then **stop and wait for the user's answer before presenting the next item**. Do not pre-list all items up front; the user only ever sees one finding, one verdict question, at a time. Group overlapping findings into one item as the sequence proceeds.
+Present exactly one item per message, never a batch. For each, show the finding in this exact shape (Claim / Evidence / Example / Judgment) so the user can validate it themselves, end with the verdict question, then **stop and wait for the user's answer before presenting the next item**. Do not pre-list all items up front; the user only ever sees one finding, one verdict question, at a time. Group overlapping findings into one item as the sequence proceeds.
 
 ```text
-**Item <n> of <N> — <finding name>** *(<author>, <standalone|grouped>)*
+**Item <n> of <N>: <finding name>** *(<author>, <standalone|grouped>)*
 
 **Claim:** <what the finding says, verbatim enough to recognize>.
 
 **Evidence (verified):**
-- <file:line>: <what the code does> — <why it matters>.
+- <file:line>: <what the code does>; <why it matters>.
 - <corroborating or contradicting references, always file:line>.
 
 **Example:**
@@ -58,26 +58,26 @@ Present exactly one item per message — never a batch. For each, show the findi
 <input that hits the bug>
 # after / or: <what the code does today, leading to the failure>
 
-**Judgment:** <Valid | Not valid | Overstated — ...>. <one line on severity/risk>.
+**Judgment:** <Valid | Not valid | Overstated: ...>. <one line on severity/risk>.
 ```
 
-Bullets in Evidence carry the code references; the Example is concrete (a command, an input, a before/after) rather than abstract. End each item with a per-item verdict question: fix, skip (record a one-line reason), or not valid. When a fix has alternatives, offer them and record the user's chosen approach — it may diverge from the finding's own suggestion, and it flows into both the drafted reply ("Will <plan>") and the fix. A skip flows into the drafted reply as "Wont fix — <reason>". **No code changes during this phase.**
+Bullets in Evidence carry the code references; the Example is concrete (a command, an input, a before/after) rather than abstract. End each item with a per-item verdict question: fix, skip (record a one-line reason), or not valid. When a fix has alternatives, offer them and record the user's chosen approach; it may diverge from the finding's own suggestion, and it flows into both the drafted reply ("Will <plan>") and the fix. A skip flows into the drafted reply as "Wont fix: <reason>". **No code changes during this phase.**
 
 Done when every finding has a user verdict and, for APPLIES, a chosen fix approach or skip reason.
 
-### 5. Gate A — post replies
+### 5. Gate A: post replies
 
 Present the reply drafts with the chosen fix approaches or skip reasons baked in. On approval, post each draft as a thread reply, then resolve the threads whose verdict is ALREADY-ADDRESSED or NO-LONGER-APPLIES. Recipes in [GH-RECIPES.md](GH-RECIPES.md).
 
-### 6. Gate B — approve fixes
+### 6. Gate B: approve fixes
 
-With any APPLIES verdicts, present a fix summary — one line per finding: finding → file(s) → planned change (the approach chosen in step 4). The user approves (all or per finding) or declines. Decline ends the run.
+With any APPLIES verdicts, present a fix summary: one line per finding: finding → file(s) → planned change (the approach chosen in step 4). The user approves (all or per finding) or declines. Decline ends the run.
 
 ### 7. Fix
 
 Per [FIXING.md](FIXING.md): clean tree, one subagent per approved finding dispatched sequentially, verify and commit after each, one atomic commit per finding.
 
-### 8. Gate C — reference commits
+### 8. Gate C: reference commits
 
 Commit references resolve on GitHub only once pushed. Ask the user to push; on confirmation, post a reply on each fixed thread carrying the full commit URL, then resolve the thread.
 
@@ -85,13 +85,13 @@ Commit references resolve on GitHub only once pushed. Ask the user to push; on c
 
 Concise, plain text, one of four shapes:
 
-- `Already addressed on this branch (<validation-PR URL>) — <evidence>.`
-- `No longer applies on this branch (<validation-PR URL>) — <evidence>.`
-- `Valid — <details>. Will <fix plan>.`
-- `Wont fix — <reason>.`
+- `Already addressed on this branch (<validation-PR URL>): <evidence>.`
+- `No longer applies on this branch (<validation-PR URL>): <evidence>.`
+- `Valid: <details>. Will <fix plan>.`
+- `Wont fix: <reason>.`
 
-Post-fix reference: `Fixed in <full commit URL> — <one-line summary>.`
+Post-fix reference: `Fixed in <full commit URL>: <one-line summary>.`
 
 ## Staleness
 
-A rebase rewrites every SHA referenced in posted comments. After any rebase of the validation branch, map old SHAs to new via `git log` and rewrite the affected comment bodies — technique in [GH-RECIPES.md](GH-RECIPES.md).
+A rebase rewrites every SHA referenced in posted comments. After any rebase of the validation branch, map old SHAs to new via `git log` and rewrite the affected comment bodies; technique in [GH-RECIPES.md](GH-RECIPES.md).
