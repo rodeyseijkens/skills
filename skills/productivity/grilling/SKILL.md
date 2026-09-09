@@ -10,6 +10,7 @@ Interview the user relentlessly about every aspect of this until we reach a shar
 Ask in **numbered rounds**. Each round lists every open question on the current frontier (all the unresolved decisions that are ready to be answered). The user answers all they can in that round, and you proceed to the next round only when the current one is complete.
 
 This is more efficient than one-question-at-a-time because:
+
 - Parallel answers: the user can resolve multiple dependencies in one response
 - Context carry: answers in the same round inform later questions in that same round
 - Frontier visibility: the user sees the full scope of what's being decided
@@ -19,18 +20,22 @@ Within a round, group questions by theme or dependency layer so the user can ans
 Format a round like so:
 
 ```
-❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+❓ **Q1** - **<question title>**: <question body, might be multiple paragraphs>
 
-➡️ <your recommended answer>
+- (a) <choice>
+- (b) <choice>
+- (c) <choice>
+
+➡️ <your recommended choice>
 
 ---
 
-❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs, including multiple choices>
+❓ **Q2** - **<question title>**: <question body, might be multiple paragraphs>
 
 ➡️ <your recommended answer>
 ```
 
-Separate consecutive questions with a horizontal rule (`---`) so each question reads as its own block.
+List lettered or numbered options as a markdown list, one option per line, in the question and in the recommendation. Separate consecutive questions with a horizontal rule (`---`) so each question reads as its own block.
 
 ## Facts vs. decisions
 
