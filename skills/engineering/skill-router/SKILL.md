@@ -91,7 +91,3 @@ Off the main flow entirely.
 ## Precondition
 
 **`/project-agent-setup`** runs before your first engineering flow to configure the issue tracker, triage labels, and doc layout the other skills assume. Custom issue trackers also work.
-
-## Maintenance
-
-When a skill is added, renamed, or removed, or any flow above changes, re-check the routes in this router against the current skill set.
