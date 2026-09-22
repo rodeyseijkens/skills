@@ -27,9 +27,8 @@ Map the diff before proposing. The output shape is mandatory; fill every section
 
 1. Run `git status` and the diff. If the working tree is clean, reply exactly: `No uncommitted changes detected.` and stop.
 2. **Validate scopes**: run the scope detection algorithm (from Principles) and declare whether scopes are in use. If they are, list the valid scopes and which sub-package dir they map to.
-3. **Group** by atomic function. Format:
-   - `Group N: <type>(<scope>): <description> → [file1, file2, ...]`
-4. **Overlaps**: files that span groups, staged via partial `git add -p` or split paths.
+3. **Group** by atomic function, in the Plan's commit-first shape. Mark a file `Partial` when the group carries only some of its hunks.
+4. **Overlaps**: files that span groups, staged with `git add -p`; mark each `Partial` in every group it appears in.
 5. **Dependencies**: strict ordering between groups (types before importers, deletions last).
 6. **Ambiguities**: changes that need user clarification before they can be grouped.
 
@@ -37,18 +36,34 @@ Present all five sections. Never skip a section to save tokens; the user needs e
 
 ## Plan
 
-Numbered list of proposed commits in dependency order. Use the `question` tool to request approval before executing; ambiguity here means rollback risk.
+Commits first, each with the files it carries nested beneath it, in dependency order. Mark a file `Partial` when the commit carries only some of its hunks; a file appears under every commit that takes part of it.
+
+```
+**1. `feat(api): add shared auth types`**
+- `packages/api/src/types.ts`
+
+**2. `refactor(api): extract token helper`**
+- `packages/api/src/auth.ts`
+- **Partial** · `packages/api/src/config.ts`
+
+**3. `chore: update lockfile`**
+- **Partial** · `pnpm-lock.yaml`
+```
+
+Present the full plan, then use the `question` tool to request approval before executing; ambiguity here means rollback risk.
 
 ## Approval
 
-Use the `question` tool with two options:
+Use the `question` tool. Offer backup only when the plan has a `Partial` commit.
 
-- **Approve: with backup**: back up the working tree with `git stash push -m "backup-before-atomic-commit"`, then `git stash apply` to restore it. Stash remains as a safety net for recovery. Proceed to execution.
-- **Approve: no backup**: skip the stash and proceed straight to execution.
+- **Partial commits present**: offer **Approve: with backup** and **Approve: no backup**.
+- **No partial commits**: offer **Approve** alone; whole-file commits are recoverable from the commits themselves.
+
+**Approve: with backup** stashes the working tree (`git stash push -m "backup-before-atomic-commit"`), then `git stash apply` restores it, leaving the stash as a recovery net.
 
 ## Execution
 
-1. **Back up** (only if "Approve: with backup" was chosen): `git stash push -m "backup-before-atomic-commit"`, then `git stash apply` to restore the working tree.
+1. **Back up** (only when the plan has a `Partial` commit and "Approve: with backup" was chosen): `git stash push -m "backup-before-atomic-commit"`, then `git stash apply` to restore the working tree.
 2. **Unstage all**: `git restore --staged .` (clean staging slate).
 3. **Commit in order**: for each group: `git add` (whole files or `-p` for partials), then `git commit -m "<message>"`.
    - On any commit failure: report the error and stop. If a stash was created, it remains for `git stash pop` recovery. Do not continue past a failure.
