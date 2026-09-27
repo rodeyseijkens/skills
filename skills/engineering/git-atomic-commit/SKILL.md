@@ -1,7 +1,6 @@
 ---
 name: git-atomic-commit
-description: Analyze uncommitted git changes and split them into atomic Conventional Commits. Use when the user wants to commit, mentions atomic or granular commits, asks for Conventional Commits, or requests a git commit plan.
-disable-model-invocation: true
+description: Analyze uncommitted git changes and split them into atomic Conventional Commits. The shared commit primitive behind `commit`. Use when the user wants to commit, mentions atomic or granular commits, asks for Conventional Commits, or requests a git commit plan.
 ---
 
 # Git Atomic Commit
