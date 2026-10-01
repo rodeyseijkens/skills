@@ -37,17 +37,15 @@ Present all five sections. Never skip a section to save tokens; the user needs e
 
 Commits first, each with the files it carries nested beneath it, in dependency order. Mark a file `Partial` when the commit carries only some of its hunks; a file appears under every commit that takes part of it.
 
-```
-**1. `feat(api): add shared auth types`**
-- `packages/api/src/types.ts`
+Emit the plan as follows:
 
-**2. `refactor(api): extract token helper`**
-- `packages/api/src/auth.ts`
-- **Partial** · `packages/api/src/config.ts`
-
-**3. `chore: update lockfile`**
-- **Partial** · `pnpm-lock.yaml`
-```
+1. **`feat(api): add shared auth types`**
+   - `packages/api/src/types.ts`
+2. **`refactor(api): extract token helper`**
+   - `packages/api/src/auth.ts`
+   - **Partial** · `packages/api/src/config.ts`
+3. **`chore: update lockfile`**
+   - **Partial** · `pnpm-lock.yaml`
 
 Present the full plan, then use the `question` tool to request approval before executing; ambiguity here means rollback risk.
 
