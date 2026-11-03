@@ -29,7 +29,7 @@ The working tree must be on the validation branch. Done when the branch is named
 
 ### 3. Validate
 
-One research-only subagent per PR. Each agent receives the full text of its PR's comments and returns, per comment:
+One research-only subagent per PR, each started with a fresh context window. Each agent receives the full text of its PR's comments and returns, per comment:
 
 - **Verdict**:
   - **APPLIES**: the issue exists in the current code.

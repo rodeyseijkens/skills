@@ -37,6 +37,8 @@ Format a round like so:
 
 List lettered or numbered options as a markdown list, one option per line, in the question and in the recommendation. Separate consecutive questions with a horizontal rule (`---`) so each question reads as its own block.
 
+Word each question so "yes" accepts your recommended answer, so agreeing never means answering "no".
+
 ## Facts vs. decisions
 
 - **Facts**: look them up. If a question can be answered by exploring the codebase, exploring the docs, or reading the code, do that. Do not put a fact to the human; resolve it yourself. Use subagents for heavy research and report findings as facts.
@@ -56,4 +58,4 @@ The grill is done when the human confirms. Until then, every "we're aligned" or 
 
 ## Subagents for facts
 
-When a question requires reading code, docs, or external sources, delegate to a subagent, get the result, and present it as a resolved fact in the next round. Never ask the user to do legwork that an agent can do.
+When a question requires reading code, docs, or external sources, delegate to a subagent with a fresh context window, get the result, and present it as a resolved fact in the next round. Never ask the user to do legwork that an agent can do.
