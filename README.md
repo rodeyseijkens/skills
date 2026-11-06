@@ -39,7 +39,7 @@ Skills for code work: development, debugging, triage, and architecture.
 - **[implement](skills/engineering/implement/SKILL.md)**: Implement a piece of work based on a spec or set of tickets, driving `tdd` and closing out with `code-review`.
 - **[implement-spec](skills/engineering/implement-spec/SKILL.md)**: Implement a whole spec in one run: read the tickets as a task graph, run implementers across the ready frontier, and land everything on one integration branch.
 - **[commit](skills/engineering/commit/SKILL.md)**: Split uncommitted git changes into atomic Conventional Commits and execute them.
-- **[review-comment-triage](skills/engineering/review-comment-triage/SKILL.md)**: Triage unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings.
+- **[review-comment-triage](skills/engineering/review-comment-triage/SKILL.md)**: Work through unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings.
 - **[retro](skills/engineering/retro/SKILL.md)**: Conduct a retrospective on a coding session and suggest improvements to the agent's environment, not the code.
 
 **Model-invoked**
@@ -51,7 +51,7 @@ Skills for code work: development, debugging, triage, and architecture.
 - **[codebase-design](skills/engineering/codebase-design/SKILL.md)**: Shared vocabulary for designing deep modules: a lot of behaviour behind a small interface, placed at a clean seam, testable through that interface.
 - **[code-review](skills/engineering/code-review/SKILL.md)**: Two-axis review of the changes since a fixed point: Standards and Spec, run in parallel sub-agents.
 - **[research](skills/engineering/research/SKILL.md)**: Spin up a background agent to investigate a question against primary sources, leaving a single cited Markdown note.
-- **[git-atomic-commit](skills/engineering/git-atomic-commit/SKILL.md)**: Analyze uncommitted git changes and split them into atomic Conventional Commits. The shared commit primitive behind `commit`.
+- **[git-atomic-commit](skills/engineering/git-atomic-commit/SKILL.md)**: Split uncommitted git changes into atomic Conventional Commits and execute them. The shared commit primitive behind `commit`.
 - **[pr](skills/engineering/pr/SKILL.md)**: Write a categorized pull request title and body from the branch diff, then open the pull request when asked.
 - **[wizard](skills/engineering/wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform.
 
