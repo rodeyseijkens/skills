@@ -1,6 +1,6 @@
 ---
 name: review-comment-triage
-description: "Triage unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings."
+description: "Work through unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings."
 disable-model-invocation: true
 ---
 
@@ -29,7 +29,7 @@ The working tree must be on the validation branch. Done when the branch is named
 
 ### 3. Validate
 
-One research-only subagent per PR, each started with a fresh context window. Each agent receives the full text of its PR's comments and returns, per comment:
+One research-only subagent per comment, each started with a fresh context window. Issue all of the subagent calls together, in the foreground, and aggregate their reports. Each agent receives the full text of the comment and returns:
 
 - **Verdict**:
   - **APPLIES**: the issue exists in the current code.
@@ -38,7 +38,7 @@ One research-only subagent per PR, each started with a fresh context window. Eac
 - **Evidence**: file:line references, snippets, commit hashes.
 - **Drafted reply**: in the reply style below.
 
-Also flag **overlaps** (findings sharing a root cause or fix; they validate, reply, and fix as one item) and **overstatements** in a finding's own wording (correct them in the draft). Research and drafting belong to the subagent; editing belongs to the coordinator. Done when every comment has a verdict, evidence, a draft, and its overlaps/overstatements are flagged.
+The coordinator flags **overlaps** across the reports (comments sharing a root cause or fix; they validate, reply, and fix as one item) and **overstatements** in a comment's own wording (correct them in the draft). Research and drafting belong to the subagent; editing belongs to the coordinator. Done when every comment has a verdict, evidence, a draft, and its overlaps/overstatements are flagged.
 
 ### 4. Validate with the user, one finding at a time
 
@@ -61,13 +61,13 @@ Present exactly one item per message, never a batch. For each, show the finding 
 **Judgment:** <Valid | Not valid | Overstated: ...>. <one line on severity/risk>.
 ```
 
-Bullets in Evidence carry the code references; the Example is concrete (a command, an input, a before/after) rather than abstract. End each item with a per-item verdict question: fix, skip (record a one-line reason), or not valid. When a fix has alternatives, offer them and record the user's chosen approach; it may diverge from the finding's own suggestion, and it flows into both the drafted reply ("Will <plan>") and the fix. A skip flows into the drafted reply as "Wont fix: <reason>". **No code changes during this phase.**
+Bullets in Evidence carry the code references; the Example is concrete (a command, an input, a before/after) rather than abstract. End each item with a per-item verdict question. Lead with the recommended verdict as the first option and phrase the question so "yes" accepts it: "Fix it as proposed?" (Recommended), or skip (record a one-line reason), or not valid. When a fix has alternatives, offer them and record the user's chosen approach; it may diverge from the finding's own suggestion, and it flows into both the drafted reply ("Will <plan>") and the fix. A skip flows into the drafted reply as "Wont fix: <reason>". **Validation is read-only: edits wait for Step 7.**
 
 Done when every finding has a user verdict and, for APPLIES, a chosen fix approach or skip reason.
 
 ### 5. Gate A: post replies
 
-Present the reply drafts with the chosen fix approaches or skip reasons baked in. On approval, post each draft as a thread reply, then resolve the threads whose verdict is ALREADY-ADDRESSED or NO-LONGER-APPLIES. Recipes in [GH-RECIPES.md](GH-RECIPES.md).
+Run unslop on each drafted reply. Then present the reply drafts with the chosen fix approaches or skip reasons baked in. On approval, post each draft as a thread reply, then resolve the threads whose verdict is ALREADY-ADDRESSED or NO-LONGER-APPLIES. Recipes in [GH-RECIPES.md](GH-RECIPES.md).
 
 ### 6. Gate B: approve fixes
 
