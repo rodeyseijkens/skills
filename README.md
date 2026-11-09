@@ -23,7 +23,9 @@ A user-invoked skill may call the Skill tool for model-invoked skills, but never
 
 ### Engineering
 
-Skills for code work: development, debugging, triage, and architecture.
+Skills for code work: development, debugging, triage, shipping, and architecture.
+
+The shipping layer: **`full-stop`** takes a change all the way to a PR that is ready to merge, unattended, and never merges. **`takeover`** finishes inherited work with the original credit preserved. **`council`** is a three-provider review. **`babysit-pr`** watches a PR and fixes real findings. **`modernize`** rebases or retires an old PR. **`resolve-pr-comments`** clears review comments. **`leaving-pr-comments`** formats every comment posted on your behalf.
 
 **User-invoked**
 
@@ -40,7 +42,10 @@ Skills for code work: development, debugging, triage, and architecture.
 - **[implement-spec](skills/engineering/implement-spec/SKILL.md)**: Implement a whole spec in one run: read the tickets as a task graph, run implementers across the ready frontier, and land everything on one integration branch.
 - **[commit](skills/engineering/commit/SKILL.md)**: Split uncommitted git changes into atomic Conventional Commits and execute them.
 - **[check-version-bump](skills/engineering/check-version-bump/SKILL.md)**: Audit package version bumps before committing: fetch release notes, map breaking changes to the repo's usage, and report blockers, behavior changes, and safe updates.
-- **[review-comment-triage](skills/engineering/review-comment-triage/SKILL.md)**: Work through unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings.
+- **[full-stop](skills/engineering/full-stop/SKILL.md)**: Take a change to a PR that is ready for the user to merge, without merging it.
+- **[takeover](skills/engineering/takeover/SKILL.md)**: Take over existing work in a PR, branch, or agent thread and finish it while preserving the original contributors' credit.
+- **[council](skills/engineering/council/SKILL.md)**: Get review or feedback from three models on different providers, looping until they agree or the round cap is reached.
+- **[resolve-pr-comments](skills/engineering/resolve-pr-comments/SKILL.md)**: Work through unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings.
 - **[retro](skills/engineering/retro/SKILL.md)**: Conduct a retrospective on a coding session and suggest improvements to the agent's environment, not the code.
 
 **Model-invoked**
@@ -53,7 +58,10 @@ Skills for code work: development, debugging, triage, and architecture.
 - **[code-review](skills/engineering/code-review/SKILL.md)**: Two-axis review of the changes since a fixed point: Standards and Spec, run in parallel sub-agents.
 - **[research](skills/engineering/research/SKILL.md)**: Spin up a background agent to investigate a question against primary sources, leaving a single cited Markdown note.
 - **[git-atomic-commit](skills/engineering/git-atomic-commit/SKILL.md)**: Split uncommitted git changes into atomic Conventional Commits and execute them. The shared commit primitive behind `commit`.
-- **[pr](skills/engineering/pr/SKILL.md)**: Write a categorized pull request title and body from the branch diff, then open the pull request when asked.
+- **[pr](skills/engineering/pr/SKILL.md)**: Write a problem-first pull request title and body with diagrams, evidence, and merge danger, then open the pull request when asked.
+- **[babysit-pr](skills/engineering/babysit-pr/SKILL.md)**: Monitor a pull request through review and CI, fixing real findings and reporting when it is ready.
+- **[modernize](skills/engineering/modernize/SKILL.md)**: Rebase an old PR and decide whether it should still exist. Use when asked to rebase a PR or to modernize it.
+- **[leaving-pr-comments](skills/engineering/leaving-pr-comments/SKILL.md)**: Use whenever leaving a comment on GitHub on the user's behalf.
 - **[wizard](skills/engineering/wizard/SKILL.md)**: Generate an interactive bash wizard that walks a human through steps only they can perform.
 
 ### Productivity
@@ -92,7 +100,10 @@ Skills live under `skills/{engineering,productivity,misc}/<name>/SKILL.md`.
 
 MIT: see [LICENSE](LICENSE).
 
+The shipping skills (`full-stop`, `takeover`, `council`, `babysit-pr`, `modernize`, `leaving-pr-comments`) are adapted from [t3dotgg/tstack](https://github.com/t3dotgg/tstack), MIT.
+
 Original work Copyright (c) Matt Pocock.
 Original work Copyright (c) Lauren Tan.
 Original work Copyright (c) Julius Brussee.
+Original work Copyright (c) Theo Browne.
 Modifications Copyright (c) Rodey Seijkens.
