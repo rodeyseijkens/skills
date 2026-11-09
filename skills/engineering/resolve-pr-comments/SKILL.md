@@ -1,12 +1,12 @@
 ---
-name: review-comment-triage
+name: resolve-pr-comments
 description: "Work through unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings."
 disable-model-invocation: true
 ---
 
-# Review comment triage
+# Resolve PR comments
 
-Move unresolved review comments on one or more pull requests through triage: validate each finding against the code as it stands, reply, resolve what is addressed, and fix what is approved.
+Work through unresolved review comments on one or more pull requests: validate each finding against the code as it stands, reply, resolve what is addressed, and fix what is approved.
 
 Inputs: one or more PR numbers/URLs, optionally a list of comment authors to skip.
 
@@ -83,7 +83,7 @@ Commit references resolve on GitHub only once pushed. Ask the user to push; on c
 
 ## Reply style
 
-Concise, plain text, one of four shapes:
+Every reply is posted through `leaving-pr-comments`, so it carries the attribution callout around the body below. Concise, plain text, one of four shapes:
 
 - `Already addressed on this branch (<validation-PR URL>): <evidence>.`
 - `No longer applies on this branch (<validation-PR URL>): <evidence>.`

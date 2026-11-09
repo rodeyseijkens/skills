@@ -1,6 +1,6 @@
 # gh recipes
 
-Exact invocations for review-comment triage. Encode every comment write as `jq -Rs '{body: .}' <file> | gh api ... --input -`; the `-f body=@file` form posts the literal path instead of the file's content.
+Exact invocations for resolve-pr-comments. Encode every comment write as `jq -Rs '{body: .}' <file> | gh api ... --input -`; the `-f body=@file` form posts the literal path instead of the file's content.
 
 Two id systems are in play: REST endpoints take the comment's **databaseId**; the GraphQL mutation takes the thread's **node id**. The query below returns both.
 
