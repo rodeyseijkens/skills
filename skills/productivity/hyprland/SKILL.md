@@ -66,7 +66,7 @@ Dispatch with `hyprctl dispatch '<hl.dsp expression>'`. List every dispatcher wi
 hyprctl repl 'local o={} for k,v in pairs(hl.dsp) do if type(v)=="table" then for k2 in pairs(v) do o[#o+1]=k.."."..k2 end else o[#o+1]=k end end table.sort(o) return table.concat(o," ")'
 ```
 
-Call a dispatcher with no arguments to get the table shape it expects, for example `send_shortcut: expected a table { mods, key, window? }`. The `hl.bind` lines in `~/.config/hypr/hyprland.lua` are working examples.
+The `hl.bind` lines in `~/.config/hypr/hyprland.lua` are working examples of each dispatcher's arguments. A dispatch with the wrong arguments errors with the shape it expects, for example `send_shortcut: expected a table { mods, key, window? }`.
 
 Target windows with `window = "address:0x…"`, using the address from `clients -j`. It names exactly one window. `class:<regex>` and `title:<regex>` also work, but they can match the wrong window.
 
