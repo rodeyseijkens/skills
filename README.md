@@ -77,8 +77,8 @@ General workflow tools, not code-specific.
 **Model-invoked**
 
 - **[grilling](skills/productivity/grilling/SKILL.md)**: Grill the user relentlessly about a plan, decision, or idea. The shared interview primitive behind `grill-me` and `grill-with-docs`.
+- **[hyprland](skills/productivity/hyprland/SKILL.md)**: Computer use on a Linux Hyprland desktop through the shell: see the screen, click and type into apps, and arrange windows and monitors.
 - **[writing-for-agents](skills/productivity/writing-for-agents/SKILL.md)**: Writing documents for agents: skills, AGENTS.md, and any doc an agent reaches by a pointer.
-- **[hyprland](skills/productivity/hyprland/SKILL.md)**: Computer use on a Linux Hyprland desktop through the shell: see the screen, click and type into apps, and read or arrange monitors, windows and workspaces.
 
 ### Misc
 
