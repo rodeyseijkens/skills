@@ -4,13 +4,13 @@ description: "Implement a piece of work based on a spec or set of tickets."
 disable-model-invocation: true
 metadata:
   credits:
-    skill: implement
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: implement
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement/SKILL.md"
+      alignment:
+        date: "2026-10-07"
+        commit: "6d6a5b9072f47ee7ba1d972d8ce0ee98b7ed4394"
 ---
 
 Implement the work described by the user in the spec or tickets.

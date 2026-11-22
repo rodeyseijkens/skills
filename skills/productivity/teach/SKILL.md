@@ -5,13 +5,13 @@ disable-model-invocation: true
 argument-hint: "What would you like to learn about?"
 metadata:
   credits:
-    skill: teach
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: teach
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md"
+      alignment:
+        date: "2026-10-07"
+        commit: "ad5400b930b297b0c0cb231ff1ffe42a7da666aa"
 ---
 
 The user has asked you to teach them something. This is a stateful request - they intend to learn the topic over multiple sessions.

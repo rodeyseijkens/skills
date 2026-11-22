@@ -4,13 +4,13 @@ description: Scan a codebase for deepening opportunities, present them as a visu
 disable-model-invocation: true
 metadata:
   credits:
-    skill: improve-codebase-architecture
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: improve-codebase-architecture
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/SKILL.md"
+      alignment:
+        date: "2026-10-29"
+        commit: "7739eaed7f8f3915437a8def198a6d0d7206dbc7"
 ---
 
 # Improve Codebase Architecture

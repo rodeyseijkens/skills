@@ -4,13 +4,13 @@ description: A relentless interview to sharpen a plan or design, which also crea
 disable-model-invocation: true
 metadata:
   credits:
-    skill: grill-with-docs
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: grill-with-docs
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/grill-with-docs/SKILL.md"
+      alignment:
+        date: "2026-08-15"
+        commit: "447ca70872026d5b79d6073a546dac082117fed7"
 ---
 
 Call the Skill tool twice, for "grilling" and "domain-modeling".

@@ -4,13 +4,13 @@ description: Take over existing work in a PR, branch, or agent thread and finish
 disable-model-invocation: true
 metadata:
   credits:
-    skill: takeover
-    author: Theo Browne
-    organisation: t3dotgg
-    url: "https://github.com/t3dotgg/tstack/blob/main/skills/takeover/SKILL.md"
-  alignment:
-    date: "2026-10-27"
-    commit: "1085050f3baed1ac724caa4a8166145fb2ac88af"
+    - skill: takeover
+      author: Theo Browne
+      organisation: t3dotgg
+      url: "https://github.com/t3dotgg/tstack/blob/main/skills/takeover/SKILL.md"
+      alignment:
+        date: "2026-10-24"
+        commit: "6efae364201abc9d9f07443e9caa461f42e51090"
 ---
 
 # Takeover

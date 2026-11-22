@@ -4,13 +4,13 @@ description: "Turn the current conversation into a spec and publish it to the pr
 disable-model-invocation: true
 metadata:
   credits:
-    skill: to-spec
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/to-spec/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: to-spec
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/to-spec/SKILL.md"
+      alignment:
+        date: "2026-08-19"
+        commit: "5c89081d4bbeb3d039a42093653f90bb698d780e"
 ---
 
 # To Spec

@@ -4,13 +4,13 @@ description: "Conduct a retrospective on a coding session."
 disable-model-invocation: true
 metadata:
   credits:
-    skill: retro
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/retro/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: retro
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/retro/SKILL.md"
+      alignment:
+        date: "2026-09-24"
+        commit: "a7d038f6bf7f01b516408e95e2fb56e0b338fa6f"
 ---
 
 The user has asked for a **retrospective**. You are suggesting improvements to the coding agent's **environment** to improve future runs.

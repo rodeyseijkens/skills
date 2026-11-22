@@ -4,13 +4,13 @@ description: "Configure this repo for the engineering skills: set up its issue t
 disable-model-invocation: true
 metadata:
   credits:
-    skill: setup-matt-pocock-skills
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: setup-matt-pocock-skills
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md"
+      alignment:
+        date: "2026-10-27"
+        commit: "ed0de59eb5de8c2730a650cc69f588ffa64c1040"
 ---
 
 # Project Agent Setup

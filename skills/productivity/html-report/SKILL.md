@@ -4,13 +4,13 @@ description: Turn a plan into a visual HTML report
 disable-model-invocation: true
 metadata:
   credits:
-    skill: improve-codebase-architecture
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/HTML-REPORT.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: improve-codebase-architecture
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/improve-codebase-architecture/HTML-REPORT.md"
+      alignment:
+        date: "2026-08-19"
+        commit: "321658273cb1d20b76026717d027d505790106d4"
 ---
 
 # HTML Report
