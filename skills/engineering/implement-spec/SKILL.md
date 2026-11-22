@@ -2,6 +2,12 @@
 name: implement-spec
 description: "Implement the result of /to-spec and /to-tickets in code."
 disable-model-invocation: true
+metadata:
+  credits:
+    skill: implement-spec
+    author: Matt Pocock
+    organisation: mattpocock
+    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement-spec/SKILL.md"
 ---
 
 You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.

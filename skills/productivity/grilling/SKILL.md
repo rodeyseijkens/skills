@@ -1,6 +1,12 @@
 ---
 name: grilling
 description: Grill the user relentlessly about a plan, decision, or idea. The shared interview primitive behind `grill-me` and `grill-with-docs`. Use when the user wants to stress-test their thinking, or uses any 'grill' trigger phrases.
+metadata:
+  credits:
+    skill: grilling
+    author: Matt Pocock
+    organisation: mattpocock
+    url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/grilling/SKILL.md"
 ---
 
 Interview the user relentlessly about every aspect of this until we reach a shared understanding. Walk down each branch of the design tree, resolving dependencies between decisions one-by-one. For each question, provide your recommended answer.

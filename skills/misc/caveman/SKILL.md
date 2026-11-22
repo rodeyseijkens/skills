@@ -7,6 +7,12 @@ description: >
   Use when user says "caveman mode", "talk like caveman", "use caveman", "less tokens",
   "be brief", or invokes /caveman. Also auto-triggers when token efficiency is requested.
 disable-model-invocation: true
+metadata:
+  credits:
+    skill: caveman
+    author: Julius Brussee
+    organisation: JuliusBrussee
+    url: "https://github.com/JuliusBrussee/skills/blob/main/skills/caveman/SKILL.md"
 ---
 
 Respond terse like smart caveman. All technical substance stay. Only fluff die.

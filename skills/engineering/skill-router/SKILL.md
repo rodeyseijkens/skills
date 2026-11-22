@@ -2,6 +2,12 @@
 name: skill-router
 description: Ask which skill or flow fits your situation. A router over the skills in this repo.
 disable-model-invocation: true
+metadata:
+  credits:
+    skill: ask-matt
+    author: Matt Pocock
+    organisation: mattpocock
+    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md"
 ---
 
 # Ask Skill Router

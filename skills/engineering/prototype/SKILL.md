@@ -1,6 +1,12 @@
 ---
 name: prototype
 description: "Build a throwaway prototype to answer a design question. Use when the user wants to sanity-check whether a state model or logic feels right, or explore what a UI should look like."
+metadata:
+  credits:
+    skill: prototype
+    author: Matt Pocock
+    organisation: mattpocock
+    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/prototype/SKILL.md"
 ---
 
 # Prototype

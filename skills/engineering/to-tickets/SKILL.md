@@ -2,6 +2,12 @@
 name: to-tickets
 description: Break a plan, spec, or conversation into independently-grabbable tickets on the project issue tracker using tracer-bullet vertical slices. Handles ordinary work and wide refactors.
 disable-model-invocation: true
+metadata:
+  credits:
+    skill: to-tickets
+    author: Matt Pocock
+    organisation: mattpocock
+    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md"
 ---
 
 # To Tickets
