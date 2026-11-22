@@ -7,6 +7,9 @@ metadata:
     author: Lauren Tan
     organisation: cursor
     url: "https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md"
+  alignment:
+    date: "2026-10-10"
+    commit: "00b14f1df36b32a8dd1529324a3a459f6563b127"
 ---
 
 # Unslop
