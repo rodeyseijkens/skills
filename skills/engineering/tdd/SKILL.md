@@ -3,13 +3,13 @@ name: tdd
 description: "Test-driven development: write a failing test, make it pass, repeat at a pre-agreed seam. Test only at seams you and the user agreed on, with expected values from an independent source of truth. Use when the user wants to build features or fix bugs test-first, mentions \"red-green\", or wants integration tests."
 metadata:
   credits:
-    skill: tdd
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: tdd
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md"
+      alignment:
+        date: "2026-10-07"
+        commit: "3f599139104dfceabc7754eeb91319802f85e042"
 ---
 
 # Test-Driven Development

@@ -4,13 +4,13 @@ description: Get review or feedback from three models on different providers, lo
 disable-model-invocation: true
 metadata:
   credits:
-    skill: council
-    author: Theo Browne
-    organisation: t3dotgg
-    url: "https://github.com/t3dotgg/tstack/blob/main/skills/council/SKILL.md"
-  alignment:
-    date: "2026-10-27"
-    commit: "1085050f3baed1ac724caa4a8166145fb2ac88af"
+    - skill: council
+      author: Theo Browne
+      organisation: t3dotgg
+      url: "https://github.com/t3dotgg/tstack/blob/main/skills/council/SKILL.md"
+      alignment:
+        date: "2026-11-11"
+        commit: "11e37a74d0a6868c121cd0910ab2b3bd9873b92a"
 ---
 
 # Council

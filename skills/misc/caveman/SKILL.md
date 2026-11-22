@@ -9,13 +9,13 @@ description: >
 disable-model-invocation: true
 metadata:
   credits:
-    skill: caveman
-    author: Julius Brussee
-    organisation: JuliusBrussee
-    url: "https://github.com/JuliusBrussee/skills/blob/main/skills/caveman/SKILL.md"
-  alignment:
-    date: "2026-06-08"
-    commit: "e19ef823ffecbc8031c5f25899a456d186618a43"
+    - skill: caveman
+      author: Julius Brussee
+      organisation: JuliusBrussee
+      url: "https://github.com/JuliusBrussee/skills/blob/main/skills/caveman/SKILL.md"
+      alignment:
+        date: "2026-11-17"
+        commit: "eb6acabd06c3e532944ed14c9733167d78921c1d"
 ---
 
 Respond terse like smart caveman. All technical substance stay. Only fluff die.

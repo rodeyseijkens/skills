@@ -4,13 +4,13 @@ description: Ask which skill or flow fits your situation. A router over the skil
 disable-model-invocation: true
 metadata:
   credits:
-    skill: ask-matt
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: ask-matt
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md"
+      alignment:
+        date: "2026-10-06"
+        commit: "954ee7fd7f1911b79bfa82589b4d35ab6c4b13b8"
 ---
 
 # Ask Skill Router

@@ -4,13 +4,13 @@ description: Move issues and external PRs through a state machine of triage role
 disable-model-invocation: true
 metadata:
   credits:
-    skill: triage
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/triage/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: triage
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/triage/SKILL.md"
+      alignment:
+        date: "2026-09-17"
+        commit: "d80fa0f4ebe0c5714af0adf8670336065233ecc6"
 ---
 
 # Triage

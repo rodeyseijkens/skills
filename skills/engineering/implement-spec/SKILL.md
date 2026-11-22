@@ -4,13 +4,13 @@ description: "Implement the result of /to-spec and /to-tickets in code."
 disable-model-invocation: true
 metadata:
   credits:
-    skill: implement-spec
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement-spec/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: implement-spec
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement-spec/SKILL.md"
+      alignment:
+        date: "2026-10-29"
+        commit: "a496f5513d4a4cf889bc48e189e579f4b0bdf6aa"
 ---
 
 You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.

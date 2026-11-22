@@ -3,13 +3,13 @@ name: leaving-pr-comments
 description: Use whenever leaving a comment on GitHub on the user's behalf.
 metadata:
   credits:
-    skill: leaving-pr-comments
-    author: Theo Browne
-    organisation: t3dotgg
-    url: "https://github.com/t3dotgg/tstack/blob/main/skills/leaving-pr-comments/SKILL.md"
-  alignment:
-    date: "2026-10-27"
-    commit: "1085050f3baed1ac724caa4a8166145fb2ac88af"
+    - skill: leaving-pr-comments
+      author: Theo Browne
+      organisation: t3dotgg
+      url: "https://github.com/t3dotgg/tstack/blob/main/skills/leaving-pr-comments/SKILL.md"
+      alignment:
+        date: "2026-10-24"
+        commit: "6efae364201abc9d9f07443e9caa461f42e51090"
 ---
 
 # Leaving PR Comments

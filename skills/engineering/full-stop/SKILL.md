@@ -4,13 +4,13 @@ description: Take a change to a PR that is ready for the user to merge, without 
 disable-model-invocation: true
 metadata:
   credits:
-    skill: full-stop
-    author: Theo Browne
-    organisation: t3dotgg
-    url: "https://github.com/t3dotgg/tstack/blob/main/skills/full-stop/SKILL.md"
-  alignment:
-    date: "2026-10-27"
-    commit: "1085050f3baed1ac724caa4a8166145fb2ac88af"
+    - skill: full-stop
+      author: Theo Browne
+      organisation: t3dotgg
+      url: "https://github.com/t3dotgg/tstack/blob/main/skills/full-stop/SKILL.md"
+      alignment:
+        date: "2026-10-27"
+        commit: "92e38e2cf677a84a142e8df296861c588542135c"
 ---
 
 # Full Stop

@@ -4,13 +4,13 @@ description: Plan a huge chunk of work (more than one agent session can hold) as
 disable-model-invocation: true
 metadata:
   credits:
-    skill: wayfinder
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/wayfinder/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: wayfinder
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/wayfinder/SKILL.md"
+      alignment:
+        date: "2026-10-29"
+        commit: "7739eaed7f8f3915437a8def198a6d0d7206dbc7"
 ---
 
 A loose idea has arrived, too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a **shared map** on the repo's issue tracker, then works its **decision tickets** (questions whose resolution is a decision, not slices of a build to execute) one at a time until the route is clear.

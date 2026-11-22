@@ -4,13 +4,13 @@ description: Break a plan, spec, or conversation into independently-grabbable ti
 disable-model-invocation: true
 metadata:
   credits:
-    skill: to-tickets
-    author: Matt Pocock
-    organisation: mattpocock
-    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md"
-  alignment:
-    date: "2026-10-09"
-    commit: "49dd158d1076134a641b33efb035946536778336"
+    - skill: to-tickets
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md"
+      alignment:
+        date: "2026-10-06"
+        commit: "9e2abf8611a345efbf779aacb171cff015bcdeb6"
 ---
 
 # To Tickets
