@@ -1,6 +1,12 @@
 ---
 name: research
 description: "Prototype a question against primary sources: spin up a background agent to investigate official docs, source code, specs, and first-party APIs, then leave a single cited Markdown note wherever the repo keeps such notes."
+metadata:
+  credits:
+    skill: research
+    author: Matt Pocock
+    organisation: mattpocock
+    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/research/SKILL.md"
 ---
 
 # Research

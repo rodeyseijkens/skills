@@ -2,6 +2,12 @@
 name: implement
 description: "Implement a piece of work based on a spec or set of tickets."
 disable-model-invocation: true
+metadata:
+  credits:
+    skill: implement
+    author: Matt Pocock
+    organisation: mattpocock
+    url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement/SKILL.md"
 ---
 
 Implement the work described by the user in the spec or tickets.
