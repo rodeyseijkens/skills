@@ -20,3 +20,4 @@ Model- or user-reachable (rich trigger phrasing so the model can reach for them)
 
 - **[grilling](./grilling/SKILL.md)**: Interview the user relentlessly about a plan, decision, or idea until every branch of the design tree is resolved.
 - **[writing-for-agents](./writing-for-agents/SKILL.md)**: Writing documents for agents: skills, AGENTS.md, and any doc an agent reaches by a pointer.
+- **[hyprland](./hyprland/SKILL.md)**: Computer use on a Linux Hyprland desktop through the shell: see the screen, click and type into apps, and read or arrange monitors, windows and workspaces.
