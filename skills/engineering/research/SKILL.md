@@ -30,7 +30,7 @@ Do not use it for questions you can answer by reading the repo or a few short fi
 
 1. **Frame the question.** Write it as a single, specific prompt: the question, the sources to prefer (official docs first, then source, then anything else), the output format. The clearer the prompt, the less the background agent has to guess.
 
-2. **Delegate.** Spin up a background agent with the framed question. Pass it the repo path so it can read source if it needs to. Tell it where to leave the note (the repo's notes location; see step 4).
+2. **Delegate.** Spin up a background agent with the framed question and a fresh context window. Pass it the repo path so it can read source if it needs to. Tell it where to leave the note (the repo's notes location; see step 4).
 
 3. **Keep working.** Continue the current session. The background agent reads while you plan.
 
