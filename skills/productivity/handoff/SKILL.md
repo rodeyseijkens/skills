@@ -9,6 +9,9 @@ metadata:
     author: Matt Pocock
     organisation: mattpocock
     url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/handoff/SKILL.md"
+  alignment:
+    date: "2026-10-09"
+    commit: "49dd158d1076134a641b33efb035946536778336"
 ---
 
 Write a handoff document summarising the current conversation so a fresh agent can continue the work. Save to the temporary directory of the user's OS (`$TMPDIR`, else `/tmp`; `%TEMP%` on Windows) - not the current workspace.

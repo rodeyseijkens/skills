@@ -7,6 +7,9 @@ metadata:
     author: Matt Pocock
     organisation: mattpocock
     url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/writing-for-agents/SKILL.md"
+  alignment:
+    date: "2026-10-09"
+    commit: "49dd158d1076134a641b33efb035946536778336"
 ---
 
 Reference for writing any document an agent consumes: a skill, an `AGENTS.md` / `CLAUDE.md`, a doc reached by a pointer. The packaging differs; the writing does not: the same levers make each one predictable, since the agent takes the same _process_ every run rather than producing the same output.

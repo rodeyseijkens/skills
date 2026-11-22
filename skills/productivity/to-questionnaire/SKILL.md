@@ -8,6 +8,9 @@ metadata:
     author: Matt Pocock
     organisation: mattpocock
     url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/to-questionnaire/SKILL.md"
+  alignment:
+    date: "2026-10-09"
+    commit: "49dd158d1076134a641b33efb035946536778336"
 ---
 
 Turn something the user can't answer alone into a **questionnaire**: a Markdown document they hand to one person to fill in async, or fill out together over a meeting. The recipient holds knowledge the user lacks; the questionnaire pulls it out of them.

@@ -8,6 +8,9 @@ metadata:
     author: Theo Browne
     organisation: t3dotgg
     url: "https://github.com/t3dotgg/tstack/blob/main/skills/takeover/SKILL.md"
+  alignment:
+    date: "2026-10-27"
+    commit: "1085050f3baed1ac724caa4a8166145fb2ac88af"
 ---
 
 # Takeover

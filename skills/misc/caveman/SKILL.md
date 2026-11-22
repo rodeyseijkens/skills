@@ -13,6 +13,9 @@ metadata:
     author: Julius Brussee
     organisation: JuliusBrussee
     url: "https://github.com/JuliusBrussee/skills/blob/main/skills/caveman/SKILL.md"
+  alignment:
+    date: "2026-06-08"
+    commit: "e19ef823ffecbc8031c5f25899a456d186618a43"
 ---
 
 Respond terse like smart caveman. All technical substance stay. Only fluff die.

@@ -7,6 +7,9 @@ metadata:
     author: Dex Horthy
     organisation: Humanlayer
     url: "https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md"
+  alignment:
+    date: "2026-11-01"
+    commit: "4d69d20f6e9b57b4fcf0d501ccfb1be961f0f329"
 ---
 
 # PR
