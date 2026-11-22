@@ -2,8 +2,6 @@
 
 Agent skills for planning, development, and tooling: small, composable, and model-agnostic.
 
-Forked from [mattpocock/skills](https://github.com/mattpocock/skills).
-
 ## Quickstart
 
 ```sh
@@ -24,8 +22,6 @@ A user-invoked skill may call the Skill tool for model-invoked skills, but never
 ### Engineering
 
 Skills for code work: development, debugging, triage, shipping, and architecture.
-
-The shipping layer: **`full-stop`** takes a change all the way to a PR that is ready to merge, unattended, and never merges. **`takeover`** finishes inherited work with the original credit preserved. **`council`** is a three-provider review. **`babysit-pr`** watches a PR and fixes real findings. **`modernize`** rebases or retires an old PR. **`resolve-pr-comments`** clears review comments. **`leaving-pr-comments`** formats every comment posted on your behalf.
 
 **User-invoked**
 
@@ -99,8 +95,6 @@ Skills live under `skills/{engineering,productivity,misc}/<name>/SKILL.md`.
 ## License
 
 MIT: see [LICENSE](LICENSE).
-
-The shipping skills (`full-stop`, `takeover`, `council`, `babysit-pr`, `modernize`, `leaving-pr-comments`) are adapted from [t3dotgg/tstack](https://github.com/t3dotgg/tstack), MIT.
 
 Original work Copyright (c) Matt Pocock.
 Original work Copyright (c) Lauren Tan.
