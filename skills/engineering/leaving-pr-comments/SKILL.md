@@ -64,20 +64,21 @@ Resolve a review thread only after its response was posted successfully.
 
 `gh api -f` (raw field) sends its value literally: it does **not** expand an
 `@file` argument. `-f body=@comment.md` posts the path itself, not the file
-contents. Use `-F` (typed field) for file expansion, or pass the body as JSON
-via `--input`:
+contents. For file-backed API comment bodies, use the same `jq -Rs` and
+`--input -` pattern as `resolve-pr-comments`:
 
 ```bash
 # Reply to an inline review comment, body read from a file
-gh api -X POST repos/<owner>/<repo>/pulls/<n>/comments/<comment-id>/replies \
-  -F body=@comment.md
+jq -Rs '{body: .}' comment.md | gh api \
+  repos/<owner>/<repo>/pulls/<n>/comments/<comment-id>/replies \
+  -X POST --input -
 
 # Top-level PR comment
 gh pr comment <n> --body-file comment.md
 
-# Arbitrary endpoint, body from a file
-jq -Rs '{body: .}' comment.md > payload.json
-gh api -X PATCH repos/<owner>/<repo>/pulls/comments/<id> --input payload.json
+# Edit an inline review comment, body read from a file
+jq -Rs '{body: .}' comment.md | gh api \
+  repos/<owner>/<repo>/pulls/comments/<id> -X PATCH --input -
 ```
 
 After posting, read the comment back and check what actually landed:
@@ -86,6 +87,10 @@ After posting, read the comment back and check what actually landed:
 gh api repos/<owner>/<repo>/pulls/comments/<id> --jq .body | head -3
 ```
 
-A body that is just a path or starts with `@` means the file was not expanded;
-fix that comment with `PATCH ... -F body=@comment.md` before resolving the
-thread.
+If the stored body is exactly the `@<file>` argument rather than the intended
+text, the file was not expanded. Replace it by rerunning the edit example above
+with the intended file before resolving.
+
+For commands to fetch review threads, reply, edit or delete comments, resolve
+threads, or update stale SHA links after a rebase, see
+[GH-RECIPES.md](GH-RECIPES.md).
