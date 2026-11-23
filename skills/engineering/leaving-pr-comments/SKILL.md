@@ -64,8 +64,8 @@ Resolve a review thread only after its response was posted successfully.
 
 `gh api -f` (raw field) sends its value literally: it does **not** expand an
 `@file` argument. `-f body=@comment.md` posts the path itself, not the file
-contents. For file-backed API comment bodies, use the same `jq -Rs` and
-`--input -` pattern as `resolve-pr-comments`:
+contents. For a file-backed API comment body, read the file with `jq -Rs` and
+pipe the JSON to `gh api --input -`:
 
 ```bash
 # Reply to an inline review comment, body read from a file
