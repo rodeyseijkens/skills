@@ -3,6 +3,13 @@ name: pr
 description: "Write a problem-first pull request title and body with diagrams, evidence, merge danger, and cross-PR dependency banners, then open the pull request when asked."
 metadata:
   credits:
+    - skill: pr
+      author: Matt Pocock
+      organisation: mattpocock
+      url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/pr/SKILL.md"
+      alignment:
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
     - skill: show-me
       author: Dex Horthy
       organisation: Humanlayer
