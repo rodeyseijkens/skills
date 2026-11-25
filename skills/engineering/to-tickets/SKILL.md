@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/to-tickets/SKILL.md"
       alignment:
-        date: "2026-10-06"
-        commit: "9e2abf8611a345efbf779aacb171cff015bcdeb6"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 # To Tickets

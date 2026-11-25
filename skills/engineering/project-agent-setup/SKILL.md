@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/setup-matt-pocock-skills/SKILL.md"
       alignment:
-        date: "2026-10-27"
-        commit: "ed0de59eb5de8c2730a650cc69f588ffa64c1040"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 # Project Agent Setup

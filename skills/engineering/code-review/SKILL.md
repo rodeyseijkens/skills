@@ -8,8 +8,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/code-review/SKILL.md"
       alignment:
-        date: "2026-10-29"
-        commit: "7739eaed7f8f3915437a8def198a6d0d7206dbc7"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 Two-axis review of the diff between `HEAD` and a fixed point the user supplies:

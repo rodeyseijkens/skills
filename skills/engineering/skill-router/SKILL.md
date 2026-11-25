@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/ask-matt/SKILL.md"
       alignment:
-        date: "2026-10-06"
-        commit: "954ee7fd7f1911b79bfa82589b4d35ab6c4b13b8"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 # Ask Skill Router

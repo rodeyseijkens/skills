@@ -10,8 +10,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/teach/SKILL.md"
       alignment:
-        date: "2026-10-07"
-        commit: "ad5400b930b297b0c0cb231ff1ffe42a7da666aa"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 The user has asked you to teach them something. This is a stateful request - they intend to learn the topic over multiple sessions.
