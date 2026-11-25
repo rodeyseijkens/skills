@@ -1,6 +1,6 @@
 ---
 name: pr
-description: "Write a problem-first pull request title and body with diagrams, evidence, and merge danger, then open the pull request when asked."
+description: "Write a problem-first pull request title and body with diagrams, evidence, merge danger, and cross-PR dependency banners, then open the pull request when asked."
 metadata:
   credits:
     - skill: show-me
@@ -49,6 +49,34 @@ clusters. Deps, upgrades, and generated files go under Chore.
 
 Done when every change in the range sits in exactly one named cluster.
 
+## Dependencies
+
+When this PR only works after another PR merges or deploys, put a banner at the
+very top of the body, before `## Summary`. GitHub renders `[!CAUTION]` red and
+`[!WARNING]` amber, so the banner is the first thing a reviewer sees.
+
+Dependent PR, the one that must wait:
+
+```markdown
+> [!CAUTION]
+> **Depends on [owner/repo#123](https://github.com/owner/repo/pull/123).** Merge and deploy it first. <What breaks until it lands.>
+```
+
+Prerequisite PR, the one that must land first:
+
+```markdown
+> [!WARNING]
+> **Required for [owner/repo#456](https://github.com/owner/repo/pull/456).** Merge and deploy this PR first so <what the other PR needs>.
+```
+
+Link the `#number` and state the consequence of landing in the wrong order. Add
+the reciprocal banner to the other PR when you can edit it. Use this only for a
+real merge or deploy dependency: landing the other PR first must change whether
+this one works.
+
+Done when every cross-PR dependency has a banner on both PRs, or the side you
+cannot edit is reported to the user.
+
 ## Write
 
 Open with the problem, not an inventory of implementation. Titles usually become
@@ -74,6 +102,8 @@ GOOD
 Output the title and body in this shape:
 
 ```markdown
+<dependency banner, when this PR needs another PR to merge or deploy first>
+
 ## Summary
 
 <1–3 sentences: the problem in the user's terms, then the outcome.>
