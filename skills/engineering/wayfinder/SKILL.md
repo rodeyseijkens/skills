@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/wayfinder/SKILL.md"
       alignment:
-        date: "2026-10-29"
-        commit: "7739eaed7f8f3915437a8def198a6d0d7206dbc7"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 A loose idea has arrived, too big for one agent session, and wrapped in fog: the way from here to the **destination** isn't visible yet. Wayfinding is about finding that way, not charging at the destination. This skill charts the way as a **shared map** on the repo's issue tracker, then works its **decision tickets** (questions whose resolution is a decision, not slices of a build to execute) one at a time until the route is clear.

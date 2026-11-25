@@ -8,8 +8,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/diagnosing-bugs/SKILL.md"
       alignment:
-        date: "2026-10-07"
-        commit: "f3fc5632f401156837ee3872f14fe33ccf1024ea"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 # Diagnosing Bugs

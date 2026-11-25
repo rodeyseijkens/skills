@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/productivity/grill-me/SKILL.md"
       alignment:
-        date: "2026-08-15"
-        commit: "fcf0071560d32913c9d4f820e0d7ca467c881619"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 Call the Skill tool with "grilling".

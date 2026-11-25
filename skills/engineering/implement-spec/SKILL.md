@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement-spec/SKILL.md"
       alignment:
-        date: "2026-10-29"
-        commit: "a496f5513d4a4cf889bc48e189e579f4b0bdf6aa"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 You have been provided a spec. This spec should have tickets associated with it, describing how to implement the spec.

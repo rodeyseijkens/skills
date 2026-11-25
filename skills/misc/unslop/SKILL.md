@@ -9,8 +9,8 @@ metadata:
       organisation: cursor
       url: "https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md"
       alignment:
-        date: "2026-11-16"
-        commit: "2f87c854fe3e2fcda44ca86b46ede35aad3c46b7"
+        date: "2026-11-25"
+        commit: "41e400932eca14f289e7db717a70455256b6d388"
 ---
 
 # Unslop

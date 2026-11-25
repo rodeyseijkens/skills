@@ -8,8 +8,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/codebase-design/SKILL.md"
       alignment:
-        date: "2026-08-19"
-        commit: "321658273cb1d20b76026717d027d505790106d4"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 # Codebase Design

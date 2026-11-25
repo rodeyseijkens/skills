@@ -14,7 +14,7 @@ metadata:
       organisation: JuliusBrussee
       url: "https://github.com/JuliusBrussee/skills/blob/main/skills/caveman/SKILL.md"
       alignment:
-        date: "2026-11-17"
+        date: "2026-11-25"
         commit: "eb6acabd06c3e532944ed14c9733167d78921c1d"
 ---
 

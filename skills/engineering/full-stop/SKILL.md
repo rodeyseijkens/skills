@@ -9,8 +9,8 @@ metadata:
       organisation: t3dotgg
       url: "https://github.com/t3dotgg/tstack/blob/main/skills/full-stop/SKILL.md"
       alignment:
-        date: "2026-10-27"
-        commit: "92e38e2cf677a84a142e8df296861c588542135c"
+        date: "2026-11-25"
+        commit: "11e37a74d0a6868c121cd0910ab2b3bd9873b92a"
 ---
 
 # Full Stop

@@ -8,15 +8,15 @@ metadata:
       organisation: Humanlayer
       url: "https://github.com/humanlayer/skills/blob/main/plugins/show-me/skills/show-me/SKILL.md"
       alignment:
-        date: "2026-09-12"
-        commit: "bba9d13ab34f0a87f1cc33df4dd196372393ddfc"
+        date: "2026-11-25"
+        commit: "4d69d20f6e9b57b4fcf0d501ccfb1be961f0f329"
     - skill: file-pr
       author: Theo Browne
       organisation: t3dotgg
       url: "https://github.com/t3dotgg/tstack/blob/main/skills/file-pr/SKILL.md"
       alignment:
-        date: "2026-10-24"
-        commit: "6efae364201abc9d9f07443e9caa461f42e51090"
+        date: "2026-11-25"
+        commit: "11e37a74d0a6868c121cd0910ab2b3bd9873b92a"
 ---
 
 # PR

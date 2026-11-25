@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/implement/SKILL.md"
       alignment:
-        date: "2026-10-07"
-        commit: "6d6a5b9072f47ee7ba1d972d8ce0ee98b7ed4394"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 Implement the work described by the user in the spec or tickets.

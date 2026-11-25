@@ -9,8 +9,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/triage/SKILL.md"
       alignment:
-        date: "2026-09-17"
-        commit: "d80fa0f4ebe0c5714af0adf8670336065233ecc6"
+        date: "2026-11-25"
+        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
 ---
 
 # Triage

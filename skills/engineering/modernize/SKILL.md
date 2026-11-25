@@ -8,8 +8,8 @@ metadata:
       organisation: t3dotgg
       url: "https://github.com/t3dotgg/tstack/blob/main/skills/modernize/SKILL.md"
       alignment:
-        date: "2026-10-24"
-        commit: "6efae364201abc9d9f07443e9caa461f42e51090"
+        date: "2026-11-25"
+        commit: "11e37a74d0a6868c121cd0910ab2b3bd9873b92a"
 ---
 
 # Modernize
