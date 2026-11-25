@@ -40,9 +40,10 @@ The route most work travels. You have an idea and want it built.
 
    When the work goes up as a pull request, **`/pr`** shapes the body: the problem in the user's terms, the smallest visual that shows the change, before/after evidence that it works, and a one-way or two-way door call. It's model-invoked, so the agent reaches for it whenever it writes a PR.
 
-4. **Ship it.** Two paths, and the choice is who is watching:
+4. **Ship it.** Three paths, and the choice is who is watching and whether the agent may merge:
    - **You are watching** → **`/babysit-pr`** watches the PR through CI and review bots, fixes the real findings, declines the rest with a written reason, and reports when the PR is ready. It's model-invoked, so ask it to watch or babysit the PR.
-   - **Nobody is watching** → **`/full-stop`** runs the whole path unattended: finish, prove, `/code-review` (escalating to `/council` only when you named it), `/pr`, `/babysit-pr`, then hands back a PR that is ready for you to merge. It never merges. "Full stop" means stop at the gate; there is no merge-granting variant.
+   - **Nobody is watching, stop before merge** → **`/full-stop`** runs the whole path unattended: finish, prove, `/code-review` (escalating to `/council` only when you named it), `/pr`, `/babysit-pr`, then hands back a PR that is ready for you to merge. "Full stop" means stop at the gate.
+   - **Nobody is watching, merge when ready** → **`/full-send`** follows the same path and merge gate as `/full-stop`, but merges after the gate passes. Use it only when the user explicitly grants full-send authority.
 
 5. **`/retro`** closes the loop. After a build, and especially one that went sideways, it looks back over the session and suggests changes to the agent's **environment**, not the code: navigation pointers, automated checks, the coding standards `/code-review` enforces, steering files, tooling. Mechanical mistakes become deterministic checks; judgement calls become coding standards. The next build then starts from a better environment.
 
