@@ -1,0 +1,82 @@
+# Agent <Task Title> - iterated control loop
+#
+# Template only. Replace placeholders, audit every permission and action, and
+# test on an isolated branch before enabling a schedule.
+
+name: "Agent: <Task Title>"
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: read
+  issues: read
+
+concurrency:
+  group: agent-<task-slug>
+  cancel-in-progress: false
+
+jobs:
+  agent-task:
+    if: >-
+      github.event_name != 'issue_comment' ||
+      (github.event.issue.pull_request &&
+       startsWith(github.event.comment.body, '/iterate') &&
+       (github.event.comment.author_association == 'OWNER' ||
+        github.event.comment.author_association == 'MEMBER' ||
+        github.event.comment.author_association == 'COLLABORATOR'))
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check iteration marker and work-in-progress bound
+        id: gate
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          EVENT_NAME: ${{ github.event_name }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_URL: ${{ github.event.issue.pull_request.url }}
+          WORKFLOW_ID: agent-<task-slug>
+          AGENT_LABEL: agent-<task-slug>
+        run: |
+          set -euo pipefail
+          if [ "$EVENT_NAME" = "schedule" ]; then
+            existing=$(gh pr list --repo "$GITHUB_REPOSITORY" --state open --label "$AGENT_LABEL" --json number --limit 1)
+            if [ "$(jq 'length' <<<"$existing")" -gt 0 ]; then
+              echo "run_agent=false" >> "$GITHUB_OUTPUT"
+              exit 0
+            fi
+          fi
+          if [ "$EVENT_NAME" != "issue_comment" ]; then
+            echo "run_agent=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          pr=$(gh api "$PR_URL")
+          body=$(jq -r '.body // ""' <<<"$pr")
+          if grep -Fq "<!-- agent-control-loop:workflow=$WORKFLOW_ID;" <<<"$body"; then
+            echo "run_agent=true" >> "$GITHUB_OUTPUT"
+            echo "number=$(jq -r '.number' <<<"$pr")" >> "$GITHUB_OUTPUT"
+            echo "head_ref=$(jq -r '.head.ref' <<<"$pr")" >> "$GITHUB_OUTPUT"
+          else
+            echo "run_agent=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout source
+        if: steps.gate.outputs.run_agent == 'true'
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event_name == 'issue_comment' && steps.gate.outputs.head_ref || github.sha }}
+          fetch-depth: 0
+
+      # Add the sensor, controller, and actuator steps designed for this repository.
+      # Keep credentials and write permissions limited to what those steps require.
+
+      # Replace this example with the locally validated sensor/controller/actuator.
+      # Add job-level token permissions and credentials only after reviewing the
+      # exact write operations this workflow needs.
+
+      # PR creation, branch pushes, and issue-comment iteration require explicit
+      # permissions and repository-specific design. Add them only after review.

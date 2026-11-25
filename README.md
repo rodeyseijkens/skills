@@ -39,6 +39,7 @@ Skills for code work: development, debugging, triage, shipping, and architecture
 - **[commit](skills/engineering/commit/SKILL.md)**: Split uncommitted git changes into atomic Conventional Commits and execute them.
 - **[check-version-bump](skills/engineering/check-version-bump/SKILL.md)**: Audit package version bumps before committing: fetch release notes, map breaking changes to the repo's usage, and report blockers, behavior changes, and safe updates.
 - **[full-stop](skills/engineering/full-stop/SKILL.md)**: Take a change to a PR that is ready for the user to merge, without merging it.
+- **[full-send](skills/engineering/full-send/SKILL.md)**: Finish, prove, review, file, and babysit a PR, then merge it when the user explicitly grants full-send authority.
 - **[takeover](skills/engineering/takeover/SKILL.md)**: Take over existing work in a PR, branch, or agent thread and finish it while preserving the original contributors' credit.
 - **[council](skills/engineering/council/SKILL.md)**: Get review or feedback from three models on different providers, looping until they agree or the round cap is reached.
 - **[resolve-pr-comments](skills/engineering/resolve-pr-comments/SKILL.md)**: Work through unresolved PR review comments: validate each against the stack tip, post concise replies, resolve addressed threads, and fix approved findings.
@@ -89,9 +90,16 @@ Communication and style skills.
 - **[unslop](skills/misc/unslop/SKILL.md)**: Cut AI tells from any writing. Must always apply.
 - **[caveman](skills/misc/caveman/SKILL.md)**: Ultra-compressed communication mode. Speaks like a smart caveman while keeping full technical accuracy.
 
+## In progress
+
+Skills under `skills/in-progress/` are candidates or adapted external skills that are not yet part of the stable categories.
+
+- **[design-control-loop](skills/in-progress/design-control-loop/SKILL.md)**: Design a codebase-specific agent control loop and build its locally runnable components and CI workflow.
+- **[last-20-percent](skills/in-progress/last-20-percent/SKILL.md)**: Find and finish the experiential details that make a working solution feel complete.
+
 ## Layout
 
-Skills live under `skills/{engineering,productivity,misc}/<name>/SKILL.md`.
+Skills live under `skills/{engineering,productivity,misc,in-progress}/<name>/SKILL.md`.
 
 ## License
 
