@@ -8,8 +8,8 @@ metadata:
       organisation: mattpocock
       url: "https://github.com/mattpocock/skills/blob/main/skills/engineering/tdd/SKILL.md"
       alignment:
-        date: "2026-11-25"
-        commit: "6f7f7831a625f040a8e06a0e7954826b87ce775a"
+        date: "2026-10-07"
+        commit: "3f599139104dfceabc7754eeb91319802f85e042"
 ---
 
 # Test-Driven Development
