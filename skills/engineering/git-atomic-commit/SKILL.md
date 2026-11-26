@@ -5,7 +5,7 @@ description: Split uncommitted git changes into atomic Conventional Commits and 
 
 # Git Atomic Commit
 
-Analyse uncommitted changes, propose atomic Conventional Commits, and execute on approval.
+Analyse uncommitted changes, propose atomic Conventional Commits, and execute on approval. Always list the full plan in the conversation before asking for approval or executing anything.
 
 ## Principles
 
@@ -47,11 +47,11 @@ Emit the plan as follows:
 3. **`chore: update lockfile`**
    - **Partial** · `pnpm-lock.yaml`
 
-Present the full plan, then use the `question` tool to request approval before executing; ambiguity here means rollback risk.
+**Always present the full plan in your reply first.** Print the plan exactly as above, then and only then use the `question` tool to request approval. Never call `question` or start executing before the plan is visible in the conversation; ambiguity here means rollback risk.
 
 ## Approval
 
-Use the `question` tool. Offer backup only when the plan has a `Partial` commit. Mark the recommended option "(Recommended)" and set it as the question's `default`, phrased so "yes" accepts it.
+Only after the full plan has been presented in the conversation. Use the `question` tool. Offer backup only when the plan has a `Partial` commit. Mark the recommended option "(Recommended)" and set it as the question's `default`, phrased so "yes" accepts it.
 
 - **Partial commits present**: offer **Approve: with backup** (Recommended) and **Approve: no backup**.
 - **No partial commits**: offer **Approve** (Recommended) alone; whole-file commits are recoverable from the commits themselves.
@@ -60,6 +60,7 @@ Use the `question` tool. Offer backup only when the plan has a `Partial` commit.
 
 ## Execution
 
+0. **Plan approved**: the plan was already listed out in the conversation and accepted via the `question` tool. Never execute against an unshown or unapproved plan.
 1. **Back up**: already done when "Approve: with backup" was chosen (see Approval).
 2. **Unstage all**: `git restore --staged .` (clean staging slate).
 3. **Commit in order**: for each group: `git add` for whole files; for partials, write the group's hunks to a patch file and stage it with `git apply --cached <patch>` (no interactive prompts), then `git commit -m "<message>"`.
